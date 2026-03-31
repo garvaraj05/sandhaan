@@ -1,0 +1,232 @@
+:root {
+    --spider-red: #ed1d24;
+}
+
+body {
+    background-color: #050505;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+}
+
+/* GRID BACKGROUND */
+.grid-bg {
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(237, 29, 36, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(237, 29, 36, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -1;
+    animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+    to {
+        background-position: 60px 60px;
+    }
+}
+
+/* HERO TEXT */
+.sandhan-text {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(5rem, 20vw, 15rem);
+    line-height: 0.9;
+    text-shadow: 4px 4px 0px var(--spider-red);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-30px) rotate(1deg);
+    }
+}
+
+/* SPIDEY FLOAT */
+.spidey-container {
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    z-index: 50;
+    animation: sideToSide 4s ease-in-out infinite;
+}
+
+@keyframes sideToSide {
+    50% {
+        transform: translateX(-40%) translateY(-15px);
+    }
+}
+
+/* CURSOR GLOW */
+.cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(237, 29, 36, 0.1), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+/* ABOUT */
+.spiderman-img {
+    transition: transform 0.4s ease;
+}
+
+/* .web-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
+    animation: webMove 8s linear infinite;
+    pointer-events: none;
+} */
+
+@keyframes webMove {
+    to {
+        transform: translateY(-120px);
+    }
+}
+
+/* WEB SHOOT */
+.web-shot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px white;
+    animation: shoot 0.7s ease-out forwards;
+}
+
+@keyframes shoot {
+    to {
+        transform: translate(-50%, -200px) scale(0.2);
+        opacity: 0;
+    }
+}
+/* INTRO VIDEO FADE */
+#intro-video {
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+
+/* VIDEO ZOOM EFFECT */
+#introVid {
+    animation: introZoom 5s ease forwards;
+}
+
+@keyframes introZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2); /* zoom in */
+    }
+}
+
+/* EXIT ANIMATION */
+#intro-video.hide {
+    opacity: 0;
+    transform: scale(1.1);
+    filter: blur(10px);
+    transition: all 0.5s ease;
+}
+#events.active {
+    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+
+/* evebts page 00 */
+/* Standalone Events Page Styles */
+
+body {
+    background-color: #101010;
+    color: white;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Bangers", system-ui;
+    letter-spacing: 0.05em;
+}
+
+.font-comic {
+    font-family: "Bangers", system-ui;
+}
+
+.web-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+.comic-border {
+    border-width: 4px;
+    border-style: solid;
+    box-shadow: 8px 8px 0px rgba(226, 54, 54, 1);
+}
+
+.comic-shadow {
+    box-shadow: 10px 10px 0px 0px #000;
+}
+
+.text-stroke {
+    -webkit-text-stroke: 1px black;
+}
+
+/* Animations */
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideInUp {
+    animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Modal Styles */
+#event-modal {
+    display: flex;
+    z-index: 100;
+}
+
+#modal-content {
+    will-change: transform, opacity;
+}
+
+/* Card Hover Effects */
+.event-card {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Category Buttons */
+.category-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 0px rgba(226, 54, 54, 0.5);
+}
+
+
+.footer-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+}
