@@ -1,3 +1,5 @@
+// this js file is fo events page and about page 
+
 const glow = document.getElementById('glow');
 const title = document.getElementById('title');
 const about = document.querySelector("#about");
@@ -369,3 +371,40 @@ menuBtn.addEventListener("click", () => {
 
     lucide.createIcons();
 });
+
+
+
+// about page js 
+const counters = document.querySelectorAll('.counter');
+
+const runCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+
+    const update = () => {
+        const increment = target / 100;
+
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            requestAnimationFrame(update);
+        } else {
+            // FINAL VALUE WITH +
+            counter.innerText = target.toLocaleString() + "+";
+        }
+    };
+
+    update();
+};
+
+// scroll trigger
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            runCounter(entry.target);
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.6 });
+
+counters.forEach(counter => observer.observe(counter));

@@ -9,6 +9,10 @@ body {
     overflow-x: hidden;
 }
 
+.sandhaan-logo{
+    height: 100px;
+}
+
 /* GRID BACKGROUND */
 .grid-bg {
     position: fixed;
@@ -230,3 +234,4 @@ h1, h2, h3, h4 {
 .footer-title {
     font-family: 'Space Grotesk', sans-serif !important;
 }
+

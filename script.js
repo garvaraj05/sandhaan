@@ -53,6 +53,9 @@ document.addEventListener("click", (e) => {
 
     setTimeout(() => web.remove(), 800);
 });
+
+
+// intro video 
 const intro = document.getElementById("intro-video");
 const video = document.getElementById("introVid");
 
@@ -70,49 +73,49 @@ video.onended = () => {
     }, 700);
 };
 
-function renderCategories() {
-    const container = document.getElementById('categories-container');
-    if (!container) return;
-    const categories = ["All", ...new Set(EVENTS.map(e => e.category))];
-    container.innerHTML = categories.map(cat => `
-        <button onclick="filterEvents('${cat}')" class="category-btn px-6 py-2 font-comic text-xl transition-all comic-border ${cat === 'All' ? 'bg-spidey-red text-white' : 'bg-white/5 text-gray-400 border-white/20 hover:border-white'}">
-            ${cat.toUpperCase()}
-        </button>
-    `).join('');
-}
+// function renderCategories() {
+//     const container = document.getElementById('categories-container');
+//     if (!container) return;
+//     const categories = ["All", ...new Set(EVENTS.map(e => e.category))];
+//     container.innerHTML = categories.map(cat => `
+//         <button onclick="filterEvents('${cat}')" class="category-btn px-6 py-2 font-comic text-xl transition-all comic-border ${cat === 'All' ? 'bg-spidey-red text-white' : 'bg-white/5 text-gray-400 border-white/20 hover:border-white'}">
+//             ${cat.toUpperCase()}
+//         </button>
+//     `).join('');
+// }
 
-let currentFilter = "All";
-window.filterEvents = (cat) => {
-    const container = document.getElementById('events-grid');
-    if (!container) return;
+// let currentFilter = "All";
+// window.filterEvents = (cat) => {
+//     const container = document.getElementById('events-grid');
+//     if (!container) return;
     
-    // Fade out
-    container.style.opacity = '0';
-    container.style.transform = 'translateY(20px)';
-    container.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+//     // Fade out
+//     container.style.opacity = '0';
+//     container.style.transform = 'translateY(20px)';
+//     container.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
 
-    setTimeout(() => {
-        currentFilter = cat;
-        const btns = document.querySelectorAll('.category-btn');
-        btns.forEach(btn => {
-            if (btn.innerText.trim() === cat.toUpperCase()) {
-                btn.classList.add('bg-spidey-red', 'text-white');
-                btn.classList.remove('bg-white/5', 'text-gray-400', 'border-white/20');
-            } else {
-                btn.classList.remove('bg-spidey-red', 'text-white');
-                btn.classList.add('bg-white/5', 'text-gray-400', 'border-white/20');
-            }
-        });
+//     setTimeout(() => {
+//         currentFilter = cat;
+//         const btns = document.querySelectorAll('.category-btn');
+//         btns.forEach(btn => {
+//             if (btn.innerText.trim() === cat.toUpperCase()) {
+//                 btn.classList.add('bg-spidey-red', 'text-white');
+//                 btn.classList.remove('bg-white/5', 'text-gray-400', 'border-white/20');
+//             } else {
+//                 btn.classList.remove('bg-spidey-red', 'text-white');
+//                 btn.classList.add('bg-white/5', 'text-gray-400', 'border-white/20');
+//             }
+//         });
         
-        renderEventsGrid();
+//         renderEventsGrid();
         
-        // Fade in
-        requestAnimationFrame(() => {
-            container.style.opacity = '1';
-            container.style.transform = 'translateY(0)';
-        });
-    }, 300);
-};
+//         // Fade in
+//         requestAnimationFrame(() => {
+//             container.style.opacity = '1';
+//             container.style.transform = 'translateY(0)';
+//         });
+//     }, 300);
+// };
 
 function renderEventsGrid() {
     const container = document.getElementById('events-grid');
@@ -155,7 +158,9 @@ function renderEventsGrid() {
         lucide.createIcons();
         setupScrollReveal();
     }
-}// ===== FEATURED EVENTS RENDER =====
+}
+
+// ===== FEATURED EVENTS RENDER =====
 function renderFeaturedEvents() {
     const container = document.getElementById("featured-events-container");
     if (!container) return;
@@ -190,6 +195,7 @@ function renderFeaturedEvents() {
 window.addEventListener("DOMContentLoaded", () => {
     renderFeaturedEvents();
 });
+
 
 
 const menuBtn = document.getElementById("menu-btn");

@@ -35,14 +35,15 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-spidey-black text-white font-sans overflow-x-hidden">
+<body class="bg-spidey-black text-white font-sans overflow-x-hidden pt-[80px]">
     <div id="glow" class="cursor-glow"></div>
     <!-- NAV -->
-    <nav class="fixed top-0 w-full z-[100] p-6 flex justify-between items-center backdrop-blur-lg z-[90]">
+    <nav
+        class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 py-10 flex justify-between items-center backdrop-blur-lg z-[100]">
 
         <!-- LOGO -->
-        <div class="text-xl font-bold tracking-tighter border-l-4 border-red-600 pl-3">
-            SANDHAN 2026
+        <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
+            <a href="./index.html"><img class="sandhaan-logo" src="./assets/logo.PNG" alt=""></a>
         </div>
 
         <!-- DESKTOP MENU -->
@@ -83,24 +84,84 @@
         </button>
     </div>
 
-    
+
+
+    <!-- Animated Background Glow -->
+    <div
+        class="fixed w-[500px] h-[500px] bg-red-600/20 blur-[120px] rounded-full top-[-100px] left-[-100px] animate-pulse">
+    </div>
+
+    <div
+        class="fixed w-[400px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full bottom-[-100px] right-[-100px] animate-pulse">
+    </div>
 
     <!-- ABOUT -->
-    <section id="about" class="about-section min-h-screen flex items-center px-6 md:px-20 relative overflow-hidden">
+    <section id="about" class="min-h-screen flex items-center justify-center px-6 relative  mt-24">
 
-        <div class="about-left w-full md:w-1/2 z-10">
-            <h2 class="text-5xl md:text-7xl font-bold mb-6">
-                COMING <span class="text-red-600">SOON</span>
-            </h2>
-
-            <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                Sandhaan ’26, the official techfest of BIT Sindri, brings together technology, innovation, and creativity through technical events, competitions, and workshops. It offers a platform for students to learn, compete, collaborate, and explore new ideas in engineering and technology.
-            </p>
+        <!-- Background Glow -->
+        <div
+            class="absolute w-[500px] h-[500px] bg-red-600/20 blur-[120px] rounded-full top-[-100px] left-[-100px] animate-pulse">
+        </div>
+        <div
+            class="absolute w-[400px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full bottom-[-100px] right-[-100px] animate-pulse">
         </div>
 
-        
+        <div class="max-w-7xl w-full grid md:grid-cols-2 gap-16 md:gap-24 items-center z-10 px-4 md:px-10">
 
+            <!-- LEFT CONTENT -->
+            <div class="space-y-6 reveal-card text-center md:text-left px-2 md:px-0">
+
+                <h1 class="text-6xl md:text-8xl text-white mb-4">ABOUT <span class="text-spidey-red">SANDHAAN</span>
+                </h1>
+
+                <!-- PARAGRAPH 1 -->
+                <p class="text-gray-400 leading-relaxed">
+                    SANDHAN 2026 is not just a fest — it’s an experience crafted for innovators, creators,
+                    and visionaries who dare to explore beyond limits. It brings together technology,
+                    management, and creativity into one electrifying multiverse where ideas collide
+                    and brilliance takes center stage.
+                </p>
+
+                <!-- PARAGRAPH 2 -->
+                <p class="text-gray-500 text-sm">
+                    From intense competitions to immersive experiences, SANDHAN is where you challenge
+                    yourself, connect with like-minded minds, and create moments that stay with you forever.
+                    Whether you're here to compete, learn, or just vibe — this is where your journey levels up.
+                </p>
+
+                <!-- STATS -->
+                <div class="flex justify-center md:justify-start space-x-10 pt-6">
+
+                    <div class="text-center hover:scale-110 transition">
+                        <h3 class="text-4xl text-red-600 font-bold counter" data-target="3">0</h3>
+                        <p class="text-xs text-gray-400 tracking-wider mt-1">DAYS</p>
+                    </div>
+
+                    <div class="text-center hover:scale-110 transition">
+                        <h3 class="text-4xl text-red-600 font-bold counter" data-target="50">0 <span>+</span></h3>
+                        <p class="text-xs text-gray-400 tracking-wider mt-1">EVENTS</p>
+                    </div>
+
+                    <div class="text-center hover:scale-110 transition">
+                        <h3 class="text-4xl text-red-600 font-bold counter" data-target="2000">0</h3>
+                        <p class="text-xs text-gray-400 tracking-wider mt-1">PARTICIPANTS</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE VIDEO -->
+            <div
+                class="reveal-card relative rounded-2xl overflow-hidden border border-white/10 mx-auto md:mx-0 w-full max-w-md md:max-w-full">
+                <iframe class="w-full h-[315px] rounded-2xl" src="https://www.youtube.com/embed/OTC28uHxvHM"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
     </section>
+
     <!-- FOOTER -->
     <footer
         class="relative py-20 bg-gradient-to-t from-red-900/10 to-transparent border-t border-white/5 overflow-hidden">
@@ -115,7 +176,7 @@
             <div class="flex justify-center space-x-12 mb-12">
 
                 <!-- insta -->
-               <a href="#" class="group">
+                <a href="#" class="group">
                     <div
                         class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
                         <img src="./assets/instagram.png" alt="" srcset="">
@@ -157,7 +218,7 @@
     <!-- Scripts -->
     <script src="data.js"></script>
     <script src="11.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </body>
 
 </html>

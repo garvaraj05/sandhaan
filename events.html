@@ -35,14 +35,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-spidey-black text-white font-sans overflow-x-hidden">
+<body class="bg-spidey-black text-white font-sans overflow-x-hidden pt-[80px]">
     <div id="glow" class="cursor-glow"></div>
     <!-- NAV -->
-    <nav class="fixed top-0 w-full z-[100] p-6 flex justify-between items-center backdrop-blur-lg z-[90]">
-
+    <nav
+        class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 py-10 flex justify-between items-center backdrop-blur-lg z-[100]">
         <!-- LOGO -->
-        <div class="text-xl font-bold tracking-tighter border-l-4 border-red-600 pl-3">
-            SANDHAN 2026
+        <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
+            <a href="./index.html"><img class="sandhaan-logo" src="./assets/logo.PNG" alt=""></a>
         </div>
 
         <!-- DESKTOP MENU -->
@@ -81,6 +81,15 @@
             class="mt-4 px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition">
             Contact Us
         </button>
+    </div>
+
+    <!-- Animated Background Glow -->
+    <div
+        class="fixed w-[500px] h-[500px] bg-red-600/20 blur-[120px] rounded-full top-[-100px] left-[-100px] animate-pulse">
+    </div>
+
+    <div
+        class="fixed w-[400px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full bottom-[-100px] right-[-100px] animate-pulse">
     </div>
 
     <!-- Events Section -->
@@ -142,7 +151,7 @@
             <div class="flex justify-center space-x-12 mb-12">
 
                 <!-- insta -->
-               <a href="#" class="group">
+                <a href="#" class="group">
                     <div
                         class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
                         <img src="./assets/instagram.png" alt="" srcset="">
