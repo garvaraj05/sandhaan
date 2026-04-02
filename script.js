@@ -56,22 +56,22 @@ document.addEventListener("click", (e) => {
 
 
 // intro video 
-// const intro = document.getElementById("intro-video");
-// const video = document.getElementById("introVid");
+const intro = document.getElementById("intro-video");
+const video = document.getElementById("introVid");
 
-// document.body.style.overflow = "hidden";
+document.body.style.overflow = "hidden";
 
-// video.onended = () => {
-//     // thoda delay for cinematic feel
-//     setTimeout(() => {
-//         intro.classList.add("hide");
-//     }, 100);
+video.onended = () => {
+    // thoda delay for cinematic feel
+    setTimeout(() => {
+        intro.classList.add("hide");
+    }, 100);
 
-//     setTimeout(() => {
-//         intro.style.display = "none";
-//         document.body.style.overflow = "auto";
-//     }, 700);
-// };
+    setTimeout(() => {
+        intro.style.display = "none";
+        document.body.style.overflow = "auto";
+    }, 700);
+};
 
 // function renderCategories() {
 //     const container = document.getElementById('categories-container');
