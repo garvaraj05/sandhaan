@@ -1,3 +1,6 @@
+*{
+    overflow-x: hidden;
+}
 :root {
     --spider-red: #ed1d24;
 }
