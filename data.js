@@ -1,53 +1,126 @@
 const EVENTS = [
     {
         id: "1",
-        title: "Web Slinging Challenge",
-        description: "Test your agility and speed in our obstacle course designed for the ultimate wall-crawler.",
-        fullDescription: "Join us for the most intense physical challenge of Sandhaan 26. The Web Slinging Challenge is an obstacle course that tests your speed, agility, and reflexes. Participants will navigate through a series of high-altitude platforms, swinging ropes, and precision landing zones. Do you have what it takes to be the next Spider-Man?",
-        date: "April 15, 2026",
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
         category: "Technical",
-        image: "https://picsum.photos/seed/websling/800/600",
-        schedule: ["09:00 AM - Registration", "10:30 AM - Qualifiers", "02:00 PM - Semi-Finals", "04:30 PM - Finals & Awards"]
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
     },
     {
         id: "2",
-        title: "Daily Bugle Photography",
-        description: "Capture the most iconic moments of the fest. Get us pictures of Spider-Man!",
-        fullDescription: "J. Jonah Jameson is looking for the best photographers in the city. Your mission is to capture the most dynamic, high-action shots of Sandhaan 26. Whether it's a perfectly timed jump or a candid moment of joy, we want to see it. The best photos will be featured on the front page of the Daily Bugle!",
-        date: "April 16, 2026",
-        category: "Creative",
-        image: "https://picsum.photos/seed/photography/800/600",
-        schedule: ["10:00 AM - Briefing", "11:00 AM - Photo Walk Begins", "05:00 PM - Submission Deadline", "07:00 PM - Exhibition"]
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
     },
     {
         id: "3",
-        title: "Stark Tech Hackathon",
-        description: "Build the next generation of hero tech using cutting edge AI and robotics.",
-        fullDescription: "Stark Industries is opening its doors to the brightest minds. In this 48-hour hackathon, you'll work in teams to develop innovative solutions for global challenges. Use AI, robotics, and sustainable tech to build something that would make Tony Stark proud. Mentors from Stark Industries will be on-site to guide you.",
-        date: "April 15-17, 2026",
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
         category: "Technical",
-        image: "https://picsum.photos/seed/hackathon/800/600",
-        schedule: ["Day 1: 09:00 AM - Kickoff", "Day 2: 24/7 Coding", "Day 3: 02:00 PM - Demos", "Day 3: 05:00 PM - Winners Announced"]
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
     },
     {
         id: "4",
-        title: "Multiverse Cosplay",
-        description: "Show up as your favorite variant from across the Spider-Verse.",
-        fullDescription: "The multiverse is collapsing, and everyone is invited! Show off your craftsmanship and performance skills in our Multiverse Cosplay competition. Whether you're Peter B. Parker, Gwen Stacy, or a completely original variant, we want to see your creativity. Prizes for best costume, best performance, and most original variant.",
-        date: "April 17, 2026",
-        category: "Cultural",
-        image: "https://picsum.photos/seed/cosplay/800/600",
-        schedule: ["01:00 PM - Green Room Prep", "03:00 PM - Stage Walk", "05:00 PM - Performance Round", "06:30 PM - Crowning of the Champions"]
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
     },
     {
         id: "5",
-        title: "Oscorp Chemistry Lab",
-        description: "A high-stakes chemistry competition. Don't turn into a lizard!",
-        fullDescription: "Step into the world of advanced biochemistry at the Oscorp Chemistry Lab. This competition challenges your knowledge of molecular structures and chemical reactions. Solve complex puzzles and perform safe but spectacular experiments. Remember: safety first, and try not to accidentally create any cross-species mutations.",
-        date: "April 16, 2026",
-        category: "Science",
-        image: "https://picsum.photos/seed/chemistry/800/600",
-        schedule: ["09:30 AM - Lab Safety Briefing", "10:30 AM - Round 1: Theory", "01:30 PM - Round 2: Practical", "04:00 PM - Results"]
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
+    },
+    {
+        id: "6",
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
+    },
+    {
+        id: "7",
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
+    },
+    {
+        id: "8",
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
+    },
+    {
+        id: "9",
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
+    },
+    {
+        id: "10",
+        title: "Coming Soon",
+        description: "Something exciting is on the way. Stay tuned!",
+        fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
+        date: "Date Revealing Soon",
+        category: "Technical",
+        location: "Venue will be revealed soon",
+        image: "./assets/coming.jpg",
+        schedule: ["To be announced"]
     }
+
+
+    //event sample
+    // {
+    //     id: "5",
+    //     title: "Oscorp Chemistry Lab",
+    //     description: "A high-stakes chemistry competition. Don't turn into a lizard!",
+    //     fullDescription: "Step into the world of advanced biochemistry at the Oscorp Chemistry Lab. This competition challenges your knowledge of molecular structures and chemical reactions. Solve complex puzzles and perform safe but spectacular experiments. Remember: safety first, and try not to accidentally create any cross-species mutations.",
+    //     date: "April 16, 2026",
+    //     category: "Science",
+    //     image: "https://picsum.photos/seed/chemistry/800/600",
+    //     schedule: ["09:30 AM - Lab Safety Briefing", "10:30 AM - Round 1: Theory", "01:30 PM - Round 2: Practical", "04:00 PM - Results"]
+    // }
 ];
 

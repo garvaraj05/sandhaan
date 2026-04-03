@@ -3,11 +3,16 @@
     --spider-red: #ed1d24;
 }
 
+
 body {
     background-color: #050505;
     color: white;
-    font-family: 'Space Grotesk', sans-serif;
+    /* font-family: 'Space Grotesk', sans-serif; */
+    font-family: 'Inter', sans-serif !important;
     overflow-x: hidden;
+}
+h1, h2, h3, h4 {
+    font-family: 'Libre Baskerville', serif !important;
 }
 
 .sandhaan-logo{
@@ -25,7 +30,13 @@ body {
     z-index: -1;
     animation: moveGrid 20s linear infinite;
 }
-
+.spidey-container {
+    pointer-events: none;
+    z-index: 0;
+}
+.cursor-glow {
+    z-index: 0;
+}
 @keyframes moveGrid {
     to {
         background-position: 60px 60px;
@@ -34,10 +45,10 @@ body {
 
 /* HERO TEXT */
 .sandhan-text {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(5rem, 20vw, 15rem);
+     font-family: 'Libre Baskerville', serif;
+    /* font-size: 150px; */
     line-height: 0.9;
-    text-shadow: 4px 4px 0px var(--spider-red);
+    text-shadow: 5px 5px 0px var(--spider-red);
     animation: float 6s ease-in-out infinite;
 }
 

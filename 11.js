@@ -97,9 +97,7 @@ function renderEventsGrid() {
             <div onclick="openModal('${event.id}', event)" class="event-card bg-spidey-black comic-border border-spidey-blue group cursor-pointer reveal-on-scroll opacity-0" data-animation="animate-scaleIn">
                 <div class="relative h-56 overflow-hidden">
                     <img src="${event.image}" alt="${event.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute top-4 right-4 bg-spidey-red text-white px-3 py-1 font-comic text-lg comic-shadow">
-                        ${event.category}
-                    </div>
+                    
                 </div>
                 <div class="p-6 space-y-4">
                     <h3 class="text-3xl text-white group-hover:text-spidey-red transition-colors">${event.title}</h3>
@@ -110,7 +108,7 @@ function renderEventsGrid() {
                         </div>
                         <div class="flex items-center gap-2">
                             <i data-lucide="map-pin" class="w-5 h-5 text-spidey-blue"></i>
-                            <span>Main Auditorium / Lab 101</span>
+                            <span>${event.location}</span>
                         </div>
                     </div>
                     <p class="text-gray-400 line-clamp-3">${event.description}</p>
@@ -207,7 +205,7 @@ window.openModal = (id, event) => {
 
         <div class="lg:w-1/2 p-8 md:p-12 space-y-8">
             <div>
-                <span class="text-spidey-red font-comic text-xl uppercase tracking-widest">${eventData.category}</span>
+                
                 <h2 class="text-5xl md:text-7xl text-white mt-2">${eventData.title}</h2>
             </div>
 
@@ -218,7 +216,7 @@ window.openModal = (id, event) => {
                 </div>
                 <div class="flex items-center gap-3 text-gray-300">
                     <i data-lucide="map-pin" class="w-6 h-6 text-spidey-blue"></i>
-                    <span class="text-xl">Stark Expo Center</span>
+                    <span class="text-xl">${eventData.location}</span>
                 </div>
             </div>
 

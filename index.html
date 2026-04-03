@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,15 +9,19 @@
     <!-- Tailwind (REQUIRED) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Config (INLINE REHNE DO) -->
+    <!-- UPDATED FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Libre+Baskerville:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        comic: ["Bangers", "system-ui"],
-                        marker: ["Permanent Marker", "cursive"],
-                        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+                        heading: ["Libre Baskerville", "serif"],
+                        body: ["Inter", "sans-serif"],
                     },
                     colors: {
                         'spidey-red': '#E23636',
@@ -28,59 +32,53 @@
             }
         }
     </script>
+
     <script src="https://unpkg.com/lucide@latest"></script>
-
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;700&display=swap"
-        rel="stylesheet">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body >
+<body class="font-body">
+
     <!-- INTRO VIDEO -->
     <div id="intro-video" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
 
         <video id="introVid" class="w-full h-full object-cover" autoplay muted playsinline>
-            <source src="videoplayback1.mp4" type="video/mp4">
+            <source src="./vid.mp4" type="video/mp4">
         </video>
 
     </div>
+
     <div class="grid-bg"></div>
     <div id="glow" class="cursor-glow"></div>
 
     <!-- NAV -->
-    <nav class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex justify-between items-center backdrop-blur-lg z-[100]">
+    <nav
+        class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex justify-between items-center backdrop-blur-lg z-[100]">
 
-        <!-- LOGO -->
         <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
             <a href="./index.html"><img class="sandhaan-logo" src="./assets/logo.PNG" alt=""></a>
         </div>
 
-        <!-- DESKTOP MENU -->
         <div class="space-x-12 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex">
             <a href="./index.html" class="hover:text-red-600 transition">Home</a>
             <a href="./about.html" class="hover:text-red-600 transition">About</a>
             <a href="./events.html" class="hover:text-red-600 transition">Events</a>
         </div>
 
-        <!-- CONTACT BUTTON -->
         <button
             class="hidden md:block px-6 py-2 bg-white text-black text-[10px] font-bold uppercase hover:bg-red-600 hover:text-white transition-all duration-300">
             Contact Us
         </button>
 
-        <!-- HAMBURGER -->
-        <button style="position: relative; left:-18px" id="menu-btn" class="md:hidden text-white">
+        <button id="menu-btn" class="md:hidden text-white">
             <i data-lucide="menu" class="w-7 h-7"></i>
         </button>
     </nav>
 
-    <!-- MOBILE MENU (Navbar ke niche se open hoga) -->
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed left-0 w-full  backdrop-blur-lg z-[90]
+    <div id="mobile-menu" class="fixed left-0 w-full backdrop-blur-lg z-[90]
     top-[80px]
     flex flex-col items-center gap-6 py-8
     text-white uppercase tracking-widest
@@ -97,8 +95,6 @@
         </button>
     </div>
 
-
-
     <!-- HERO -->
     <section class="h-screen flex items-center justify-center relative">
         <div class="relative text-center">
@@ -107,82 +103,63 @@
                 <img src="Untitled design.png" class="w-full drop-shadow-[0_0_25px_rgba(237,29,36,0.8)]">
             </div>
 
-            <h1 id="title" class="sandhan-text select-none">SANDHAAN</h1>
+            <h1 id="title" class="sandhan-text font-heading select-none text-[clamp(3rem,12vw,9rem)] leading-none">
+                SANDHAAN</h1>
 
-            <p class="text-red-600 tracking-[1.5em] text-[10px] uppercase mt-4 font-bold animate-pulse">
-                Techno-Management Fest
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+<section id="about" class="relative left-[-10px] z-20 min-h-screen flex items-center justify-center px-4 md:px-6 mt-16 md:mt-24 bg-transparent overflow-hidden">
+        
+   <div class="max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-10 md:gap-[264px] items-center z-10 px-4">
+        
+        <div class="space-y-6 reveal-card text-center md:text-left px-2 md:px-0 max-w-full sm:max-w-md mx-auto">
+
+            <!-- ONLY CHANGE HERE -->
+            <h1 class="font-heading text-5xl sm:text-6xl md:text-8xl text-white mb-4 leading-tight">
+                ABOUT <span class="text-spidey-red">SANDHAAN</span>
+            </h1>
+
+            <p style="text-align: justify;" class="text-gray-400 leading-relaxed">
+                The techno-management fest "SANDHAAN" is a fine juxtapose of mind boggling technical events with extravagant festive mood. The pulse of BIT beats harder as it approaches near. The most awaited annual techno-management fest with students from all over finding its niche in SANDHAAN and carry away a lifetime experience. Model club of BIT Sindri being the protagonist of the play, has augmented year by year in delivering the much-anticipated techno-management fest of the region. SANDHAAN'24 witnessed a crowd of approximately 5000 people which includes students from various technical colleges of national and regional level.
             </p>
 
-        </div>
-    </section>
+            
 
-    <!-- ABOUT -->
-    <!-- ABOUT -->
-    <section style="display: flex; justify-self:center" id="about" class="min-h-screen flex items-center justify-center px-4 md:px-6 relative mt-16 md:mt-24">
-        
-
-        <div class="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center z-10 px-4">
-
-            <!-- LEFT CONTENT -->
-            <div class="space-y-6 reveal-card text-center md:text-left px-2 md:px-0">
-
-                <h1 class="text-6xl md:text-8xl text-white mb-4">ABOUT <span class="text-spidey-red">SANDHAAN</span>
-                </h1>
-
-                <!-- PARAGRAPH 1 -->
-                <p class="text-gray-400 leading-relaxed">
-                    SANDHAN 2026 is not just a fest — it’s an experience crafted for innovators, creators,
-                    and visionaries who dare to explore beyond limits. It brings together technology,
-                    management, and creativity into one electrifying multiverse where ideas collide
-                    and brilliance takes center stage.
-                </p>
-
-                <!-- PARAGRAPH 2 -->
-                <p class="text-gray-500 text-sm">
-                    From intense competitions to immersive experiences, SANDHAN is where you challenge
-                    yourself, connect with like-minded minds, and create moments that stay with you forever.
-                    Whether you're here to compete, learn, or just vibe — this is where your journey levels up.
-                </p>
-
-               <a href="./about.html" class="nav-link text-spidey-red font-comic text-2xl hover:underline flex items-center gap-2 self-center md:self-auto">
-                     Know More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" class="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </a>
-
-            </div>
-
-            <!-- RIGHT SIDE VIDEO -->
-            <div
-                class="reveal-card relative rounded-2xl overflow-hidden border border-white/10 mx-auto md:mx-0 w-full max-w-md md:max-w-full">
-                <iframe class="w-full h-[315px] rounded-2xl" src="https://www.youtube.com/embed/OTC28uHxvHM"
-                    allowfullscreen>
-                </iframe>
-            </div>
+            <a style="justify-self: center;" href="./about.html" class="nav-link text-spidey-red text-2xl hover:underline flex items-center gap-2">
+                Know More 
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
 
         </div>
-    </section>
 
-    <!-- Featured Events -->
+        <div class="reveal-card relative rounded-2xl overflow-hidden border border-white/10 mx-auto md:mx-0 w-full max-w-[95vw] sm:max-w-full">
+            <iframe class="w-full max-w-full h-[220px] sm:h-[260px] md:h-[315px] rounded-2xl block" src="https://www.youtube.com/embed/OTC28uHxvHM" allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+    <!-- FEATURED EVENTS -->
     <section class="py-24 px-4 bg-spidey-black web-pattern">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                 <div>
-                    <h2 class="text-5xl md:text-6xl text-white mb-2">FEATURED <span
+                    <h2 class="font-heading text-5xl md:text-6xl text-white mb-2">FEATURED <span
                             class="text-spidey-red text-stroke">MISSIONS</span></h2>
-                    <p class="text-gray-400 text-xl">Get ready for the most intense challenges in the city.</p>
+                    <p class="text-gray-400 text-xl">Get ready for the most intense challenges.</p>
                 </div>
-                <a href="./events.html"
-                    class="nav-link text-spidey-red font-comic text-2xl hover:underline flex items-center gap-2">
-                    ALL EVENTS <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                <a href="./events.html" class="text-spidey-red text-2xl hover:underline flex items-center gap-2">
+                    ALL EVENTS
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="featured-events-container">
-                <!-- Featured events will be injected here -->
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="featured-events-container"></div>
         </div>
     </section>
-
-
 
     <!-- FOOTER -->
     <footer
@@ -190,7 +167,7 @@
 
         <div class="max-w-4xl mx-auto text-center relative z-10">
 
-            <h2 class="text-3xl font-bold tracking-[0.5em] mb-8 animate-pulse text-white/80">
+            <h2 class="footer-title text-3xl font-bold tracking-[0.5em] mb-8 animate-pulse text-white/80">
                 JOIN THE LEAGUE
             </h2>
 
