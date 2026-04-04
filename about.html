@@ -35,34 +35,42 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-spidey-black text-white font-sans overflow-x-hidden pt-[80px]">
+<body class="bg-spidey-black text-white font-sans overflow-x-hidden">
     <div id="glow" class="cursor-glow"></div>
     <!-- NAV -->
-    <nav
-        class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 py-10 flex justify-between items-center backdrop-blur-lg z-[100]">
+    <nav class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex items-center backdrop-blur-lg z-[100]">
 
         <!-- LOGO -->
         <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
-            <a href="./index.html"><img class="sandhaan-logo" src="./assets/logo.PNG" alt=""></a>
+            <a href="./index.html">
+                <img class="sandhaan-logo" src="./assets/logo.PNG" alt="">
+            </a>
         </div>
 
-        <!-- DESKTOP MENU -->
-        <div class="space-x-12 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex">
-            <a href="./index.html" class="hover:text-red-600 transition">Home</a>
-            <a href="./about.html" class="hover:text-red-600 transition">About</a>
-            <a href="./events.html" class="hover:text-red-600 transition">Events</a>
+        <!-- RIGHT SIDE (MENU + BUTTON) -->
+        <div class="ml-auto flex items-center gap-10">
+
+            <!-- DESKTOP MENU -->
+            <div class="space-x-8 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex">
+                <a href="./index.html" class="hover:text-red-600 transition">Home</a>
+                <a href="./about.html" class="hover:text-red-600 transition">About</a>
+                <a href="./events.html" class="hover:text-red-600 transition">Events</a>
+            </div>
+
+            <!-- CONTACT BUTTON -->
+            <button
+                class="hidden md:block px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+                onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
+                Contact Us
+            </button>
+
+            <!-- HAMBURGER -->
+            <button id="menu-btn" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+
         </div>
 
-        <!-- CONTACT BUTTON -->
-        <button
-            class="hidden md:block px-6 py-2 bg-white text-black text-[10px] font-bold uppercase hover:bg-red-600 hover:text-white transition-all duration-300">
-            Contact Us
-        </button>
-
-        <!-- HAMBURGER -->
-        <button id="menu-btn" class="md:hidden text-white">
-            <i data-lucide="menu" class="w-7 h-7"></i>
-        </button>
     </nav>
 
     <!-- MOBILE MENU (Navbar ke niche se open hoga) -->
@@ -79,7 +87,8 @@
         <a href="./events.html" class="hover:text-red-600">Events</a>
 
         <button
-            class="mt-4 px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition">
+            class="md:hidden px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+            onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
             Contact Us
         </button>
     </div>
@@ -89,7 +98,7 @@
 
 
     <!-- ABOUT  Model club-->
-    <section id="about" class="min-h-screen flex items-center justify-center px-4 md:px-6 relative mt-16 md:mt-24">
+    <section id="about" class="min-h-screen flex items-center justify-center px-4 md:px-6 relative mt-[100px]">
 
 
         <div class="max-w-7xl w-full mx-auto  md:grid-cols-2 gap-10 md:gap-16 items-center z-10 px-4">
@@ -103,25 +112,36 @@
 
                 <!-- PARAGRAPH 1 -->
                 <p style="text-align: justify;" class="text-gray-400 leading-relaxed">
-                Established in 1949, BIT Sindri is among India’s oldest and most esteemed technical institutions, guided by the motto “नियति कर्तुं कर्म तत्” – Actions are superior to inactions. The institute has consistently nurtured technological talent and advanced research aligned with global standards, significantly contributing to the nation’s growth and innovation.
-            </p>
+                    Established in 1949, BIT Sindri is among India’s oldest and most esteemed technical institutions,
+                    guided by the motto “नियति कर्तुं कर्म तत्” – Actions are superior to inactions. The institute has
+                    consistently nurtured technological talent and advanced research aligned with global standards,
+                    significantly contributing to the nation’s growth and innovation.
+                </p>
                 <!-- PARAGRAPH 2 -->
                 <p style="text-align: justify;" class="text-gray-400 leading-relaxed">
-                The Model Club, founded in 1976, is BIT Sindri’s sole technical club initiated by the administration. It focuses on enhancing technical skills, fostering innovation, and promoting holistic development among students.
-            </p>
+                    The Model Club, founded in 1976, is BIT Sindri’s sole technical club initiated by the
+                    administration. It focuses on enhancing technical skills, fostering innovation, and promoting
+                    holistic development among students.
+                </p>
                 <!-- PARAGRAPH 3 -->
                 <p style="text-align: justify;" class="text-gray-400 leading-relaxed">
-                SANDHAAN, BIT Sindri’s annual techno-management festival, celebrates innovation and technical excellence. For over a decade, it has provided a platform for students to refine their skills, showcase talents, and engage in impactful collaborations. The festival features technical competitions, entrepreneurial challenges, management workshops, expert lectures, and social outreach initiatives addressing global challenges. With participation from over 30 colleges and 100 schools and a footfall of 8,000+, SANDHAAN fosters creativity, teamwork, and innovation. It inspires students to push boundaries and prepares them to become leaders in science and technology.
-            </p>
+                    SANDHAAN, BIT Sindri’s annual techno-management festival, celebrates innovation and technical
+                    excellence. For over a decade, it has provided a platform for students to refine their skills,
+                    showcase talents, and engage in impactful collaborations. The festival features technical
+                    competitions, entrepreneurial challenges, management workshops, expert lectures, and social outreach
+                    initiatives addressing global challenges. With participation from over 30 colleges and 100 schools
+                    and a footfall of 8,000+, SANDHAAN fosters creativity, teamwork, and innovation. It inspires
+                    students to push boundaries and prepares them to become leaders in science and technology.
+                </p>
 
-                
 
-                
-        </div>
+
+
+            </div>
     </section>
 
     <!-- ABOUT  Sandhaan-->
-    <section id="about" class="min-h-screen flex items-center justify-center px-4 md:px-6 relative mt-16 md:mt-24">
+    <section id="about" class="min-h-screen flex items-center justify-center px-4 md:px-6 relative mt-[100px]">
 
 
         <div class="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center z-10 px-4">
@@ -135,10 +155,16 @@
 
                 <!-- PARAGRAPH 1 -->
                 <p style="text-align: justify;" class="text-gray-400 leading-relaxed">
-                The techno-management fest "SANDHAAN" is a fine juxtapose of mind boggling technical events with extravagant festive mood. The pulse of BIT beats harder as it approaches near. The most awaited annual techno-management fest with students from all over finding its niche in SANDHAAN and carry away a lifetime experience. Model club of BIT Sindri being the protagonist of the play, has augmented year by year in delivering the much-anticipated techno-management fest of the region. SANDHAAN'24 witnessed a crowd of approximately 5000 people which includes students from various technical colleges of national and regional level.
-            </p>
+                    The techno-management fest "SANDHAAN" is a fine juxtapose of mind boggling technical events with
+                    extravagant festive mood. The pulse of BIT beats harder as it approaches near. The most awaited
+                    annual techno-management fest with students from all over finding its niche in SANDHAAN and carry
+                    away a lifetime experience. Model club of BIT Sindri being the protagonist of the play, has
+                    augmented year by year in delivering the much-anticipated techno-management fest of the region.
+                    SANDHAAN'24 witnessed a crowd of approximately 5000 people which includes students from various
+                    technical colleges of national and regional level.
+                </p>
 
-                
+
 
                 <!-- STATS -->
                 <div class="flex justify-center md:justify-start space-x-10 pt-6">
@@ -154,7 +180,7 @@
                     </div>
 
                     <div class="text-center hover:scale-110 transition">
-                        <h3 class="text-4xl text-red-600 font-bold counter" data-target="000">0</h3>
+                        <h3 class="text-4xl text-red-600 font-bold counter" data-target="5000">0</h3>
                         <p class="text-xs text-gray-400 tracking-wider mt-1">PARTICIPANTS</p>
                     </div>
 
@@ -172,59 +198,205 @@
 
         </div>
     </section>
+    <!-- GLIMPSES SECTION -->
+<section id="glimpses" class="min-h-screen py-20 px-4 md:px-6 bg-spidey-black relative">
+    <div class="max-w-7xl mx-auto">
+        <!-- Section Heading -->
+        <h2 class="font-heading text-5xl sm:text-6xl md:text-7xl text-white text-center mb-12">
+            GLIMPSES
+        </h2>
+
+        <!-- Photos Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- Repeat this block for each photo (12 in total) -->
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 1" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 2" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 3" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 4" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 5" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 6" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 7" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 8" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 9" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 10" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 11" class="w-full h-full object-cover">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-white/10 hover:scale-105 transition-transform">
+                <img src="./assets/coming.jpg" alt="Glimpse 12" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- FOOTER -->
-    <footer
-        class="relative py-20 bg-gradient-to-t from-red-900/10 to-transparent border-t border-white/5 overflow-hidden">
+    <footer id="footer" class="text-white py-16 w-full border-t border-white/10">
 
-        <div class="max-w-4xl mx-auto text-center relative z-10">
+        <!-- MAIN GRID: LEFT, MIDDLE, RIGHT -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-24 items-start px-6 md:px-12 lg:px-24">
 
-            <h2 class="footer-title text-3xl font-bold tracking-[0.5em] mb-8 animate-pulse text-white/80">
-                JOIN THE LEAGUE
-            </h2>
+            <!-- LEFT: LOGO + SOCIALS -->
+            <div class="w-full flex flex-col items-center text-center">
+                <img src="./assets/logo.PNG" class="w-52 mb-4">
 
-            <!-- ICONS BACK -->
-            <div class="flex justify-center space-x-12 mb-12">
 
-                <!-- insta -->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/instagram.png" alt="" srcset="">
-                    </div>
-                </a>
 
-                <!-- fb -->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/facebook.png" alt="" srcset="">
-                    </div>
-                </a>
+                <div class="flex gap-4 justify-center">
+                    <a href="https://www.facebook.com/modelclubbit/" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/facebook.png" class="w-4">
+                        </div>
+                    </a>
 
-                <!-- linkedin -->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/linkedin.png" alt="" srcset="">
-                    </div>
-                </a>
+                    <a href="https://www.instagram.com/modelclubbit/" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/instagram.png" class="w-4">
+                        </div>
+                    </a>
 
-                <!-- yt-->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/youtube.png" alt="" srcset="">
-                    </div>
-                </a>
+                    <a href="https://in.linkedin.com/company/modelclub-bitsindri" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/linkedin.png" class="w-4">
+                        </div>
+                    </a>
 
+                    <a href="https://www.youtube.com/channel/UC6T8EWpW1HBGSLL7_UyjHhw" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/youtube.png" class="w-4">
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <div class="text-[10px] tracking-[0.3em] text-gray-500">
-                <p>© 2026 MODEL CLUB • BIT SINDRI</p>
+            <!-- MIDDLE: QUICK LINKS -->
+            <div class="w-full flex flex-col items-center text-center justify-center">
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="./index.html" class="hover:text-spidey-red transition-all duration-300">Home</a></li>
+                    <li><a href="./about.html" class="hover:text-spidey-red transition-all duration-300">About</a></li>
+                    <li><a href="./events.html" class="hover:text-spidey-red transition-all duration-300">Events</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- RIGHT: CONTACT INFO -->
+            <div class="w-full flex flex-col items-center text-center justify-center">
+                <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+
+                <div class="space-y-5 text-gray-400 text-sm">
+
+                    <!-- PERSON 1 -->
+                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="tel:+917004199068"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/phone.png" class="w-5">
+                            <p>
+                                Harshita Seth <br>
+                                +91 7004199068
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- PERSON 2 -->
+                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="tel:+918434845066"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/phone.png" class="w-5">
+                            <p>
+                                Radhe Raman Singh <br>
+                                +91 8434845066
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- PERSON 3 -->
+                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="tel:+919279336168"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/phone.png" class="w-5">
+                            <p>
+                                Prince Kumar <br>
+                                +91 9279336168
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <!-- <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="mailto:sandhaan@bitsindri.ac.in"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/mail.png" class="w-5">
+                            sandhaan@bitsindri.ac.in
+                        </a>
+                    </div> -->
+
+
+                </div>
             </div>
 
         </div>
+        <!-- DEVELOPERS SECTION -->
+        <div class="w-full flex flex-col items-center mt-12 mb-6 px-6">
+
+            <!-- Designed & Developed -->
+            <p class="text-xs text-gray-400 mb-4">Designed & Developed by</p>
+
+            <!-- Developers: flex-row, no wrap -->
+            <div class="flex flex-row gap-6 justify-center flex-nowrap">
+
+                <!-- DEV 1 -->
+                <div
+                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
+                    <p>Garva Raj</p>
+                    <a href="https://www.linkedin.com/in/garva-raj-a82087317/" class="flex items-center gap-1">
+                        <img src="./assets/linkedin.png" class="w-3">
+                    </a>
+                    <a href="https://www.instagram.com/gr.04__/" class="flex items-center gap-1">
+                        <img src="./assets/instagram.png" class="w-3">
+                    </a>
+                </div>
+
+                <!-- DEV 2 -->
+                <div
+                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
+                    <p>Himanshu Kumar</p>
+                    <a href="https://www.linkedin.com/in/himanshu-mishra-432334330/" class="flex items-center gap-1">
+                        <img src="./assets/linkedin.png" class="w-3">
+                    </a>
+                    <a href="https://www.instagram.com/__himanshu.15__/" class="flex items-center gap-1">
+                        <img src="./assets/instagram.png" class="w-3">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
     </footer>
     <!-- Scripts -->
     <script src="data.js"></script>

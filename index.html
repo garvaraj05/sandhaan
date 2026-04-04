@@ -54,28 +54,40 @@
     <div id="glow" class="cursor-glow"></div>
 
     <!-- NAV -->
-    <nav
-        class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex justify-between items-center backdrop-blur-lg z-[100]">
+    <nav class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex items-center backdrop-blur-lg z-[100]">
 
-        <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
-            <a href="./index.html"><img class="sandhaan-logo" src="./assets/logo.PNG" alt=""></a>
-        </div>
+    <!-- LOGO -->
+    <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
+        <a href="./index.html">
+            <img class="sandhaan-logo" src="./assets/logo.PNG" alt="">
+        </a>
+    </div>
 
-        <div class="space-x-12 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex">
+    <!-- RIGHT SIDE (MENU + BUTTON) -->
+    <div class="ml-auto flex items-center gap-10">
+
+        <!-- DESKTOP MENU -->
+        <div class="space-x-8 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex">
             <a href="./index.html" class="hover:text-red-600 transition">Home</a>
             <a href="./about.html" class="hover:text-red-600 transition">About</a>
             <a href="./events.html" class="hover:text-red-600 transition">Events</a>
         </div>
 
+        <!-- CONTACT BUTTON -->
         <button
-            class="hidden md:block px-6 py-2 bg-white text-black text-[10px] font-bold uppercase hover:bg-red-600 hover:text-white transition-all duration-300">
-            Contact Us
-        </button>
+                class="hidden md:block px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+                onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
+                Contact Us
+            </button>
 
+        <!-- HAMBURGER -->
         <button id="menu-btn" class="md:hidden text-white">
             <i data-lucide="menu" class="w-7 h-7"></i>
         </button>
-    </nav>
+
+    </div>
+
+</nav>
 
     <!-- MOBILE MENU -->
     <div id="mobile-menu" class="fixed left-0 w-full backdrop-blur-lg z-[90]
@@ -90,7 +102,8 @@
         <a href="./events.html" class="hover:text-red-600">Events</a>
 
         <button
-            class="mt-4 px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition">
+            class="md:hidden px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+            onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
             Contact Us
         </button>
     </div>
@@ -99,48 +112,58 @@
     <section class="h-screen flex items-center justify-center relative">
         <div class="relative text-center">
 
-            <div class="spidey-container">
+            <!-- <div class="spidey-container">
                 <img src="Untitled design.png" class="w-full drop-shadow-[0_0_25px_rgba(237,29,36,0.8)]">
-            </div>
+            </div> -->
 
             <h1 id="title" class="sandhan-text font-heading select-none text-[clamp(3rem,12vw,9rem)] leading-none">
                 SANDHAAN</h1>
+                
 
         </div>
     </section>
 
-    <!-- ABOUT -->
-<section id="about" class="relative left-[-10px] z-20 min-h-screen flex items-center justify-center px-4 md:px-6 mt-16 md:mt-24 bg-transparent overflow-hidden">
-        
-   <div class="max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-10 md:gap-[264px] items-center z-10 px-4">
-        
-        <div class="space-y-6 reveal-card text-center md:text-left px-2 md:px-0 max-w-full sm:max-w-md mx-auto">
 
-            <!-- ONLY CHANGE HERE -->
-            <h1 class="font-heading text-5xl sm:text-6xl md:text-8xl text-white mb-4 leading-tight">
-                ABOUT <span class="text-spidey-red">SANDHAAN</span>
-            </h1>
 
-            <p style="text-align: justify;" class="text-gray-400 leading-relaxed">
-                The techno-management fest "SANDHAAN" is a fine juxtapose of mind boggling technical events with extravagant festive mood. The pulse of BIT beats harder as it approaches near. The most awaited annual techno-management fest with students from all over finding its niche in SANDHAAN and carry away a lifetime experience. Model club of BIT Sindri being the protagonist of the play, has augmented year by year in delivering the much-anticipated techno-management fest of the region. SANDHAAN'24 witnessed a crowd of approximately 5000 people which includes students from various technical colleges of national and regional level.
-            </p>
+    <!-- About sandhaan -->
+    <section class="py-24 px-4 bg-spidey-black web-pattern">
+        <div class="max-w-7xl mx-auto">
 
-            
+            <div class="flex flex-col md:flex-row items-center gap-10">
 
-            <a style="justify-self: center;" href="./about.html" class="nav-link text-spidey-red text-2xl hover:underline flex items-center gap-2">
-                Know More 
-                <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </a>
+                <!-- LEFT CONTENT -->
+                <div class="w-full md:w-1/2">
+                    <h2 class="font-heading text-5xl md:text-6xl text-white mb-4">
+                        ABOUT <span class="text-spidey-red text-stroke">SANDHAAN</span>
+                    </h2>
+
+                    <p class="text-gray-400 text-lg mb-6 text-justify">
+                        The techno-management fest "SANDHAAN" is a fine juxtapose of mind boggling technical events with
+                        extravagant festive mood. The pulse of BIT beats harder as it approaches near. The most awaited
+                        annual techno-management fest with students from all over finding its niche in SANDHAAN and
+                        carry away a lifetime experience. Model club of BIT Sindri being the protagonist of the play,
+                        has augmented year by year in delivering the much-anticipated techno-management fest of the
+                        region. SANDHAAN'24 witnessed a crowd of approximately 5000 people which includes students from
+                        various technical colleges of national and regional level.
+                    </p>
+
+                    <a href="./about.html" class="text-spidey-red text-xl hover:underline flex items-center gap-2">
+                        Know More
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- RIGHT VIDEO -->
+                <div class="w-full md:w-1/2">
+                    <iframe class="w-full h-[220px] sm:h-[260px] md:h-[315px] rounded-2xl"
+                        src="https://www.youtube.com/embed/OTC28uHxvHM" allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
 
         </div>
-
-        <div class="reveal-card relative rounded-2xl overflow-hidden border border-white/10 mx-auto md:mx-0 w-full max-w-[95vw] sm:max-w-full">
-            <iframe class="w-full max-w-full h-[220px] sm:h-[260px] md:h-[315px] rounded-2xl block" src="https://www.youtube.com/embed/OTC28uHxvHM" allowfullscreen>
-            </iframe>
-        </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- FEATURED EVENTS -->
     <section class="py-24 px-4 bg-spidey-black web-pattern">
@@ -162,57 +185,153 @@
     </section>
 
     <!-- FOOTER -->
-    <footer
-        class="relative py-20 bg-gradient-to-t from-red-900/10 to-transparent border-t border-white/5 overflow-hidden">
+    <footer id="footer" class="text-white py-16 w-full border-t border-white/10">
 
-        <div class="max-w-4xl mx-auto text-center relative z-10">
+        <!-- MAIN GRID: LEFT, MIDDLE, RIGHT -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-24 items-start px-6 md:px-12 lg:px-24">
 
-            <h2 class="footer-title text-3xl font-bold tracking-[0.5em] mb-8 animate-pulse text-white/80">
-                JOIN THE LEAGUE
-            </h2>
+            <!-- LEFT: LOGO + SOCIALS -->
+            <div class="w-full flex flex-col items-center text-center">
+                <img src="./assets/logo.PNG" class="w-52 mb-4">
 
-            <!-- ICONS BACK -->
-            <div class="flex justify-center space-x-12 mb-12">
 
-                <!-- insta -->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/instagram.png" alt="" srcset="">
-                    </div>
-                </a>
 
-                <!-- fb -->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/facebook.png" alt="" srcset="">
-                    </div>
-                </a>
+                <div class="flex gap-4 justify-center">
+                    <a href="https://www.facebook.com/modelclubbit/" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/facebook.png" class="w-4">
+                        </div>
+                    </a>
 
-                <!-- linkedin -->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/linkedin.png" alt="" srcset="">
-                    </div>
-                </a>
+                    <a href="https://www.instagram.com/modelclubbit/" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/instagram.png" class="w-4">
+                        </div>
+                    </a>
 
-                <!-- yt-->
-                <a href="#" class="group">
-                    <div
-                        class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition-all duration-300">
-                        <img src="./assets/youtube.png" alt="" srcset="">
-                    </div>
-                </a>
+                    <a href="https://in.linkedin.com/company/modelclub-bitsindri" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/linkedin.png" class="w-4">
+                        </div>
+                    </a>
 
+                    <a href="https://www.youtube.com/channel/UC6T8EWpW1HBGSLL7_UyjHhw" class="group">
+                        <div
+                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
+                            <img src="./assets/youtube.png" class="w-4">
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <div class="text-[10px] tracking-[0.3em] text-gray-500">
-                <p>© 2026 MODEL CLUB • BIT SINDRI</p>
+            <!-- MIDDLE: QUICK LINKS -->
+            <div class="w-full flex flex-col items-center text-center justify-center">
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="./index.html" class="hover:text-spidey-red transition-all duration-300">Home</a></li>
+                    <li><a href="./about.html" class="hover:text-spidey-red transition-all duration-300">About</a></li>
+                    <li><a href="./events.html" class="hover:text-spidey-red transition-all duration-300">Events</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- RIGHT: CONTACT INFO -->
+            <div class="w-full flex flex-col items-center text-center justify-center">
+                <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+
+                <div class="space-y-5 text-gray-400 text-sm">
+
+                    <!-- PERSON 1 -->
+                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="tel:+917004199068"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/phone.png" class="w-5">
+                            <p>
+                                Harshita Seth <br>
+                                +91 7004199068
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- PERSON 2 -->
+                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="tel:+918434845066"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/phone.png" class="w-5">
+                            <p>
+                                Radhe Raman Singh <br>
+                                +91 8434845066
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- PERSON 3 -->
+                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="tel:+919279336168"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/phone.png" class="w-5">
+                            <p>
+                                Prince Kumar <br>
+                                +91 9279336168
+                            </p>
+                        </a>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <!-- <div class="flex items-center gap-3 justify-center group cursor-pointer">
+                        <a href="mailto:sandhaan@bitsindri.ac.in"
+                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
+                            <img src="./assets/mail.png" class="w-5">
+                            sandhaan@bitsindri.ac.in
+                        </a>
+                    </div> -->
+
+
+                </div>
             </div>
 
         </div>
+        <!-- DEVELOPERS SECTION -->
+        <div class="w-full flex flex-col items-center mt-12 mb-6 px-6">
+
+            <!-- Designed & Developed -->
+            <p class="text-xs text-gray-400 mb-4">Designed & Developed by</p>
+
+            <!-- Developers: flex-row, no wrap -->
+            <div class="flex flex-row gap-6 justify-center flex-nowrap">
+
+                <!-- DEV 1 -->
+               <div
+                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
+                    <p>Garva Raj</p>
+                    <a href="https://www.linkedin.com/in/garva-raj-a82087317/" class="flex items-center gap-1">
+                        <img src="./assets/linkedin.png" class="w-3">
+                    </a>
+                    <a href="https://www.instagram.com/gr.04__/" class="flex items-center gap-1">
+                        <img src="./assets/instagram.png" class="w-3">
+                    </a>
+                </div>
+
+                <!-- DEV 2 -->
+                <div
+                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
+                    <p>Himanshu Kumar</p>
+                    <a href="https://www.linkedin.com/in/himanshu-mishra-432334330/" class="flex items-center gap-1">
+                        <img src="./assets/linkedin.png" class="w-3">
+                    </a>
+                    <a href="https://www.instagram.com/__himanshu.15__/" class="flex items-center gap-1">
+                        <img src="./assets/instagram.png" class="w-3">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
     </footer>
 
     <!-- JS -->

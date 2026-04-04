@@ -48,7 +48,7 @@ h1, h2, h3, h4 {
      font-family: 'Libre Baskerville', serif;
     /* font-size: 150px; */
     line-height: 0.9;
-    text-shadow: 5px 5px 0px var(--spider-red);
+    text-shadow: 4px 4px 0px var(--spider-red);
     animation: float 6s ease-in-out infinite;
 }
 
