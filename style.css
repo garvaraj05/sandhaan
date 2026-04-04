@@ -3,6 +3,13 @@
     --spider-red: #ed1d24;
 }
 
+@font-face {
+  font-family: 'Blowar';
+  src: url('./fonts/TheBlowar-Regular.woff2') format('woff2'),
+       url('./fonts/TheBlowar-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
     background-color: #050505;
@@ -45,18 +52,41 @@ h1, h2, h3, h4 {
 
 /* HERO TEXT */
 .sandhan-text {
-     font-family: 'Libre Baskerville', serif;
+    font-family: 'Blowar', serif !important;
     /* font-size: 150px; */
     line-height: 0.9;
     text-shadow: 4px 4px 0px var(--spider-red);
     animation: float 6s ease-in-out infinite;
 }
+/* sandhaan text effect */
+.glow-text {
+    position: relative;
+    color: white;
+    animation: glowPulse 2s ease-in-out infinite alternate;
+}
 
-@keyframes float {
+@keyframes glowPulse {
+    0% {
+        text-shadow:
+            0 0 3px #ed1d24,
+            0 0 6px #ed1d24;
+    }
+
+    100% {
+        text-shadow:
+            0 0 6px #ed1d24,
+            0 0 12px #ed1d24,
+            0 0 18px rgba(237,29,36,0.5);
+    }
+}
+
+
+
+/* @keyframes float {
     50% {
         transform: translateY(-30px) rotate(1deg);
     }
-}
+} */
 
 /* SPIDEY FLOAT */
 .spidey-container {
@@ -246,4 +276,5 @@ h1, h2, h3, h4 {
 .footer-title {
     font-family: 'Space Grotesk', sans-serif !important;
 }
+
 
