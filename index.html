@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SANDHAN '26 | The Multiverse</title>
 
     <!-- Tailwind (REQUIRED) -->
@@ -11,345 +10,469 @@
 
     <!-- UPDATED FONTS -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Libre+Baskerville:wght@700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Libre+Baskerville:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tailwind Config -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        heading: ["Libre Baskerville", "serif"],
-                        body: ["Inter", "sans-serif"],
-                    },
-                    colors: {
-                        'spidey-red': '#E23636',
-                        'spidey-blue': '#5061E1',
-                        'spidey-black': '#101010',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['Libre Baskerville', 'serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'spidey-red': '#E23636',
+              'spidey-blue': '#5061E1',
+              'spidey-black': '#101010',
+            },
+          },
+        },
+      };
     </script>
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body class="font-body">
-
+  <body class="font-body">
     <!-- INTRO VIDEO -->
-    <div id="intro-video" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
-
-        <video id="introVid" class="w-full h-full object-cover" autoplay muted playsinline>
-            <source src="./vid.mp4" type="video/mp4">
-        </video>
-
+    <div
+      id="intro-video"
+      class="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
+    >
+      <video
+        id="introVid"
+        class="w-full h-full object-cover"
+        autoplay
+        muted
+        playsinline
+      >
+        <source src="./vid.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <!-- <div class="grid-bg"></div> -->
     <div id="glow" class="cursor-glow"></div>
 
     <!-- NAV -->
-    <nav class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex items-center backdrop-blur-lg z-[100]">
+    <nav
+      class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex items-center backdrop-blur-lg z-[100]"
+    >
+      <!-- LOGO -->
+      <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
+        <a href="./index.html">
+          <img class="sandhaan-logo" src="./assets/logo.PNG" alt="" />
+        </a>
+      </div>
 
-        <!-- LOGO -->
-        <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
-            <a href="./index.html">
-                <img class="sandhaan-logo" src="./assets/logo.PNG" alt="">
-            </a>
+      <!-- RIGHT SIDE (MENU + BUTTON) -->
+      <div class="ml-auto flex items-center gap-10">
+        <!-- DESKTOP MENU -->
+        <div
+          class="space-x-8 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex"
+        >
+          <a href="./index.html" class="hover:text-red-600 transition">Home</a>
+          <a href="./about.html" class="hover:text-red-600 transition">About</a>
+          <a href="./events.html" class="hover:text-red-600 transition"
+            >Events</a
+          >
         </div>
 
-        <!-- RIGHT SIDE (MENU + BUTTON) -->
-        <div class="ml-auto flex items-center gap-10">
+        <!-- CONTACT BUTTON -->
+        <button
+          class="hidden md:block px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+          onclick="
+            document
+              .getElementById('footer')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          Contact Us
+        </button>
 
-            <!-- DESKTOP MENU -->
-            <div class="space-x-8 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex">
-                <a href="./index.html" class="hover:text-red-600 transition">Home</a>
-                <a href="./about.html" class="hover:text-red-600 transition">About</a>
-                <a href="./events.html" class="hover:text-red-600 transition">Events</a>
-            </div>
-
-            <!-- CONTACT BUTTON -->
-            <button
-                class="hidden md:block px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
-                onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
-                Contact Us
-            </button>
-
-            <!-- HAMBURGER -->
-            <button id="menu-btn" class="md:hidden text-white">
-                <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
-
-        </div>
-
+        <!-- HAMBURGER -->
+        <button id="menu-btn" class="md:hidden text-white">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed left-0 w-full backdrop-blur-lg z-[90]
-    top-[80px]
-    flex flex-col items-center gap-6 py-8
-    text-white uppercase tracking-widest
-    transform -translate-y-10 opacity-0 pointer-events-none
-    transition-all duration-300 rounded-b-2xl">
+    <div
+      id="mobile-menu"
+      class="fixed left-0 w-full backdrop-blur-lg z-[90] top-[80px] flex flex-col items-center gap-6 py-8 text-white uppercase tracking-widest transform -translate-y-10 opacity-0 pointer-events-none transition-all duration-300 rounded-b-2xl"
+    >
+      <a href="./index.html" class="hover:text-red-600">Home</a>
+      <a href="./about.html" class="hover:text-red-600">About</a>
+      <a href="./events.html" class="hover:text-red-600">Events</a>
 
-        <a href="./index.html" class="hover:text-red-600">Home</a>
-        <a href="./about.html" class=" hover:text-red-600">About</a>
-        <a href="./events.html" class="hover:text-red-600">Events</a>
-
-        <button
-            class="md:hidden px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
-            onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
-            Contact Us
-        </button>
+      <button
+        class="md:hidden px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+        onclick="
+          document
+            .getElementById('footer')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        Contact Us
+      </button>
     </div>
 
     <!-- HERO -->
-    <section class="min-h-[100svh] md:min-h-screen flex items-center justify-center relative">
-        <div class="relative text-center">
+    <section
+      class="hero-section flex items-center justify-center relative overflow-hidden px-4"
+    >
+      <div class="hero-backdrop"></div>
 
-            <div class="spidey-container">
-                <img src="Untitled design.png" class="w-full drop-shadow-[0_0_25px_rgba(237,29,36,0.8)]">
-            </div>
+      <div class="relative text-center hero-content max-w-6xl mx-auto w-full">
+        <span class="hero-badge">BIT SINDRI'S TECH MULTIVERSE</span>
 
-            <div class="relative text-center">
-
-                <h1 id="title" class="sandhan-text glow-text select-none text-[clamp(4rem,16vw,12rem)] leading-none">
-                    SANDHAAN
-                </h1>
-
-                <p class="mt-4 text-gray-400 text-sm md:text-lg tracking-[0.3em] uppercase opacity-80">
-                    The Official Techfest of BIT Sindri
-                </p>
-
-            </div>
-
-
+        <div
+          class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="./events.html"
+            class="hero-btn hero-btn-primary px-8 py-3 text-sm uppercase tracking-[0.2em] font-semibold rounded-full"
+          >
+            Explore Events
+          </a>
+          <a
+            href="./about.html"
+            class="hero-btn hero-btn-secondary px-8 py-3 text-sm uppercase tracking-[0.2em] font-semibold rounded-full"
+          >
+            Discover more
+          </a>
         </div>
+      </div>
     </section>
-
-
 
     <!-- About sandhaan -->
-    <section class="py-24 px-4 bg-spidey-black web-pattern">
-        <div class="max-w-7xl mx-auto">
+    <section class="pt-6 sm:pt-12 md:pt-12 lg:pt-16 pb-16 px-4 web-pattern">
+      <div class="max-w-7xl mx-auto">
+        <button
+          id="about-video-trigger"
+          type="button"
+          class="about-video-cover group w-full rounded-2xl overflow-hidden border border-white/15 relative"
+          aria-label="Play Sandhaan intro video"
+        >
+          <img
+            src="./assets/play.png"
+            alt="Play video cover"
+            class="w-full h-[300px] sm:h-[420px] md:h-[540px] lg:h-[640px] object-contain object-center bg-black/30"
+          />
 
-            <div class="flex flex-col md:flex-row items-center gap-10">
+          <span class="about-play-label">Tap To Play</span>
+        </button>
 
-                <!-- LEFT CONTENT -->
-                <div class="w-full md:w-1/2">
-                    <h2 class="font-heading text-5xl md:text-6xl text-white mb-4">
-                        ABOUT <span class="text-spidey-red text-stroke">SANDHAAN</span>
-                    </h2>
+        <div class="mt-14 max-w-7xl text-center mx-auto">
+          <h2
+            class="font-heading text-3xl sm:text-4xl md:text-5xl text-white mb-4 text-center"
+          >
+            ABOUT <span class="text-spidey-red text-stroke">SANDHAAN</span>
+          </h2>
 
-                    <p class="text-gray-400 text-lg mb-6 text-justify">
-                        The techno-management fest "SANDHAAN" is a fine juxtapose of mind boggling technical events with
-                        extravagant festive mood. The pulse of BIT beats harder as it approaches near. The most awaited
-                        annual techno-management fest with students from all over finding its niche in SANDHAAN and
-                        carry away a lifetime experience. Model club of BIT Sindri being the protagonist of the play,
-                        has augmented year by year in delivering the much-anticipated techno-management fest of the
-                        region. SANDHAAN'24 witnessed a crowd of approximately 5000 people which includes students from
-                        various technical colleges of national and regional level.
-                    </p>
+          <p class="text-gray-400 text-lg mb-6 max-w-5xl mx-auto">
+            The techno-management fest "SANDHAAN" is a fine juxtapose of mind
+            boggling technical events with extravagant festive mood. The pulse
+            of BIT beats harder as it approaches near. The most awaited annual
+            techno-management fest with students from all over finding its niche
+            in SANDHAAN and carry away a lifetime experience. Model club of BIT
+            Sindri being the protagonist of the play, has augmented year by year
+            in delivering the much-anticipated techno-management fest of the
+            region. SANDHAAN'24 witnessed a crowd of approximately 5000 people
+            which includes students from various technical colleges of national
+            and regional level.
+          </p>
 
-                    <a href="./about.html" class="text-spidey-red text-xl hover:underline flex items-center gap-2">
-                        Know More
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-
-                <!-- RIGHT VIDEO -->
-                <div class="w-full md:w-1/2">
-                    <iframe class="w-full h-[220px] sm:h-[260px] md:h-[315px] rounded-2xl"
-                        src="https://www.youtube.com/embed/OTC28uHxvHM" allowfullscreen>
-                    </iframe>
-                </div>
-
-            </div>
-
+          <a
+            href="./about.html"
+            class="text-spidey-red text-xl hover:underline inline-flex items-center gap-2"
+          >
+            Know More
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- FEATURED EVENTS -->
-    <section class="py-24 px-4 bg-spidey-black web-pattern">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                <div>
-                    <h2 class="font-heading text-5xl md:text-6xl text-white mb-2">FEATURED <span
-                            class="text-spidey-red text-stroke">MISSIONS</span></h2>
-                    <p class="text-gray-400 text-xl">Get ready for the most intense challenges.</p>
-                </div>
-                <a href="./events.html" class="text-spidey-red text-2xl hover:underline flex items-center gap-2">
-                    ALL EVENTS
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-            </div>
+    <div
+      id="about-video-modal"
+      class="about-video-modal fixed inset-0 z-[200] hidden opacity-0 pointer-events-none"
+      aria-hidden="true"
+    >
+      <div class="about-video-overlay absolute inset-0"></div>
+      <button
+        id="about-video-close"
+        type="button"
+        class="about-video-close"
+        aria-label="Close video"
+      >
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <div
+        class="about-video-frame-wrap absolute inset-0 flex items-center justify-center p-3 md:p-10"
+      >
+        <iframe
+          id="about-video-frame"
+          class="w-full h-full max-w-6xl max-h-[88vh] rounded-xl"
+          src=""
+          title="Sandhaan Intro Video"
+          allow="autoplay; fullscreen; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="featured-events-container"></div>
+    <!-- FEATURED EVENTS -->
+    <section class="py-24 px-4 web-pattern">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-4"
+        >
+          <div class="text-center md:text-left">
+            <h2
+              class="font-heading text-3xl sm:text-4xl md:text-5xl text-white mb-2"
+            >
+              FEATURED <span class="text-spidey-red text-stroke">MISSIONS</span>
+            </h2>
+            <p class="text-gray-400 text-lg">
+              Get ready for the most intense challenges.
+            </p>
+          </div>
+          <a
+            href="./events.html"
+            class="hidden md:flex text-spidey-red text-2xl hover:underline items-center gap-2"
+          >
+            ALL EVENTS
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
         </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8"
+          id="featured-events-container"
+        ></div>
+
+        <div class="mt-8 flex justify-center md:hidden">
+          <a
+            href="./events.html"
+            class="text-spidey-red text-xl hover:underline flex items-center gap-2"
+          >
+            ALL EVENTS
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="footer" class="text-white py-16 w-full border-t border-white/10">
+    <footer
+      id="footer"
+      class="text-white py-16 w-full border-t border-white/10"
+    >
+      <!-- MAIN GRID: LEFT, MIDDLE, RIGHT -->
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-24 items-start px-6 md:px-12 lg:px-24"
+      >
+        <!-- LEFT: LOGO + SOCIALS -->
+        <div class="w-full flex flex-col items-center text-center">
+          <img src="./assets/logo.PNG" class="w-52 mb-4" />
 
-        <!-- MAIN GRID: LEFT, MIDDLE, RIGHT -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-24 items-start px-6 md:px-12 lg:px-24">
+          <div class="flex gap-4 justify-center">
+            <a href="https://www.facebook.com/modelclubbit/" class="group">
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/facebook.png" class="w-4" />
+              </div>
+            </a>
 
-            <!-- LEFT: LOGO + SOCIALS -->
-            <div class="w-full flex flex-col items-center text-center">
-                <img src="./assets/logo.PNG" class="w-52 mb-4">
+            <a href="https://www.instagram.com/modelclubbit/" class="group">
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/instagram.png" class="w-4" />
+              </div>
+            </a>
 
+            <a
+              href="https://in.linkedin.com/company/modelclub-bitsindri"
+              class="group"
+            >
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/linkedin.png" class="w-4" />
+              </div>
+            </a>
 
+            <a
+              href="https://www.youtube.com/channel/UC6T8EWpW1HBGSLL7_UyjHhw"
+              class="group"
+            >
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/youtube.png" class="w-4" />
+              </div>
+            </a>
+          </div>
+        </div>
 
-                <div class="flex gap-4 justify-center">
-                    <a href="https://www.facebook.com/modelclubbit/" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/facebook.png" class="w-4">
-                        </div>
-                    </a>
+        <!-- MIDDLE: QUICK LINKS -->
+        <div
+          class="w-full flex flex-col items-center text-center justify-center"
+        >
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li>
+              <a
+                href="./index.html"
+                class="hover:text-spidey-red transition-all duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="hover:text-spidey-red transition-all duration-300"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="./events.html"
+                class="hover:text-spidey-red transition-all duration-300"
+                >Events</a
+              >
+            </li>
+          </ul>
+        </div>
 
-                    <a href="https://www.instagram.com/modelclubbit/" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/instagram.png" class="w-4">
-                        </div>
-                    </a>
+        <!-- RIGHT: CONTACT INFO -->
+        <div
+          class="w-full flex flex-col items-center text-center justify-center"
+        >
+          <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
 
-                    <a href="https://in.linkedin.com/company/modelclub-bitsindri" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/linkedin.png" class="w-4">
-                        </div>
-                    </a>
-
-                    <a href="https://www.youtube.com/channel/UC6T8EWpW1HBGSLL7_UyjHhw" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/youtube.png" class="w-4">
-                        </div>
-                    </a>
-                </div>
+          <div class="space-y-5 text-gray-400 text-sm">
+            <!-- PERSON 1 -->
+            <div
+              class="flex items-center gap-3 justify-center group cursor-pointer"
+            >
+              <a
+                href="tel:+917004199068"
+                class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300"
+              >
+                <img src="./assets/phone.png" class="w-5" />
+                <p>
+                  Harshita Seth <br />
+                  +91 7004199068
+                </p>
+              </a>
             </div>
 
-            <!-- MIDDLE: QUICK LINKS -->
-            <div class="w-full flex flex-col items-center text-center justify-center">
-                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                <ul class="space-y-3 text-gray-400 text-sm">
-                    <li><a href="./index.html" class="hover:text-spidey-red transition-all duration-300">Home</a></li>
-                    <li><a href="./about.html" class="hover:text-spidey-red transition-all duration-300">About</a></li>
-                    <li><a href="./events.html" class="hover:text-spidey-red transition-all duration-300">Events</a>
-                    </li>
-                </ul>
+            <!-- PERSON 2 -->
+            <div
+              class="flex items-center gap-3 justify-center group cursor-pointer"
+            >
+              <a
+                href="tel:+918434845066"
+                class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300"
+              >
+                <img src="./assets/phone.png" class="w-5" />
+                <p>
+                  Radhe Raman Singh <br />
+                  +91 8434845066
+                </p>
+              </a>
             </div>
 
-            <!-- RIGHT: CONTACT INFO -->
-            <div class="w-full flex flex-col items-center text-center justify-center">
-                <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+            <!-- PERSON 3 -->
+            <div
+              class="flex items-center gap-3 justify-center group cursor-pointer"
+            >
+              <a
+                href="tel:+919279336168"
+                class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300"
+              >
+                <img src="./assets/phone.png" class="w-5" />
+                <p>
+                  Prince Kumar <br />
+                  +91 9279336168
+                </p>
+              </a>
+            </div>
 
-                <div class="space-y-5 text-gray-400 text-sm">
-
-                    <!-- PERSON 1 -->
-                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
-                        <a href="tel:+917004199068"
-                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
-                            <img src="./assets/phone.png" class="w-5">
-                            <p>
-                                Harshita Seth <br>
-                                +91 7004199068
-                            </p>
-                        </a>
-                    </div>
-
-                    <!-- PERSON 2 -->
-                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
-                        <a href="tel:+918434845066"
-                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
-                            <img src="./assets/phone.png" class="w-5">
-                            <p>
-                                Radhe Raman Singh <br>
-                                +91 8434845066
-                            </p>
-                        </a>
-                    </div>
-
-                    <!-- PERSON 3 -->
-                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
-                        <a href="tel:+919279336168"
-                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
-                            <img src="./assets/phone.png" class="w-5">
-                            <p>
-                                Prince Kumar <br>
-                                +91 9279336168
-                            </p>
-                        </a>
-                    </div>
-
-                    <!-- EMAIL -->
-                    <!-- <div class="flex items-center gap-3 justify-center group cursor-pointer">
+            <!-- EMAIL -->
+            <!-- <div class="flex items-center gap-3 justify-center group cursor-pointer">
                         <a href="mailto:sandhaan@bitsindri.ac.in"
                             class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
                             <img src="./assets/mail.png" class="w-5">
                             sandhaan@bitsindri.ac.in
                         </a>
                     </div> -->
-
-
-                </div>
-            </div>
-
+          </div>
         </div>
-        <!-- DEVELOPERS SECTION -->
-        <div class="w-full flex flex-col items-center mt-12 mb-6 px-6">
+      </div>
+      <!-- DEVELOPERS SECTION -->
+      <div class="w-full flex flex-col items-center mt-12 mb-6 px-6">
+        <!-- Designed & Developed -->
+        <p class="text-xs text-gray-400 mb-4">Designed & Developed by</p>
 
-            <!-- Designed & Developed -->
-            <p class="text-xs text-gray-400 mb-4">Designed & Developed by</p>
+        <!-- Developers: flex-row, no wrap -->
+        <div class="flex flex-row gap-6 justify-center flex-nowrap">
+          <!-- DEV 1 -->
+          <div
+            class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer"
+          >
+            <p>Garva Raj</p>
+            <a
+              href="https://www.linkedin.com/in/garva-raj-a82087317/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/linkedin.png" class="w-3" />
+            </a>
+            <a
+              href="https://www.instagram.com/gr.04__/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/instagram.png" class="w-3" />
+            </a>
+          </div>
 
-            <!-- Developers: flex-row, no wrap -->
-            <div class="flex flex-row gap-6 justify-center flex-nowrap">
-
-                <!-- DEV 1 -->
-                <div
-                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
-                    <p>Garva Raj</p>
-                    <a href="https://www.linkedin.com/in/garva-raj-a82087317/" class="flex items-center gap-1">
-                        <img src="./assets/linkedin.png" class="w-3">
-                    </a>
-                    <a href="https://www.instagram.com/gr.04__/" class="flex items-center gap-1">
-                        <img src="./assets/instagram.png" class="w-3">
-                    </a>
-                </div>
-
-                <!-- DEV 2 -->
-                <div
-                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
-                    <p>Himanshu Kumar</p>
-                    <a href="https://www.linkedin.com/in/himanshu-mishra-432334330/" class="flex items-center gap-1">
-                        <img src="./assets/linkedin.png" class="w-3">
-                    </a>
-                    <a href="https://www.instagram.com/__himanshu.15__/" class="flex items-center gap-1">
-                        <img src="./assets/instagram.png" class="w-3">
-                    </a>
-                </div>
-
-            </div>
-
+          <!-- DEV 2 -->
+          <div
+            class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer"
+          >
+            <p>Himanshu Kumar</p>
+            <a
+              href="https://www.linkedin.com/in/himanshu-mishra-432334330/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/linkedin.png" class="w-3" />
+            </a>
+            <a
+              href="https://www.instagram.com/__himanshu.15__/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/instagram.png" class="w-3" />
+            </a>
+          </div>
         </div>
-
-
+      </div>
     </footer>
 
     <!-- JS -->
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script>
-        lucide.createIcons();
+      lucide.createIcons();
     </script>
-
-</body>
-
+  </body>
 </html>

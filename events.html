@@ -1,298 +1,381 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sandhaan 26 - Events Page Component</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        comic: ["Bangers", "system-ui"],
-                        marker: ["Permanent Marker", "cursive"],
-                        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-                    },
-                    colors: {
-                        'spidey-red': '#E23636',
-                        'spidey-blue': '#5061E1',
-                        'spidey-black': '#101010',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              comic: ['Bangers', 'system-ui'],
+              marker: ['Permanent Marker', 'cursive'],
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              'spidey-red': '#E23636',
+              'spidey-blue': '#5061E1',
+              'spidey-black': '#101010',
+            },
+          },
+        },
+      };
     </script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700;900&family=Permanent+Marker&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700;900&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
+  </head>
 
-<body class="bg-spidey-black text-white font-sans overflow-x-hidden pt-[80px]">
+  <body class="text-white font-sans overflow-x-hidden pt-[70px] md:pt-[80px]">
     <div id="glow" class="cursor-glow"></div>
     <!-- NAV -->
-    <nav class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex items-center backdrop-blur-lg z-[100]">
+    <nav
+      class="fixed top-0 w-full h-[70px] md:h-[80px] px-6 flex items-center backdrop-blur-lg z-[100]"
+    >
+      <!-- LOGO -->
+      <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
+        <a href="./index.html">
+          <img class="sandhaan-logo" src="./assets/logo.PNG" alt="" />
+        </a>
+      </div>
 
-        <!-- LOGO -->
-        <div class="h-[70px] md:h-[80px] flex items-center overflow-hidden">
-            <a href="./index.html">
-                <img class="sandhaan-logo" src="./assets/logo.PNG" alt="">
-            </a>
+      <!-- RIGHT SIDE (MENU + BUTTON) -->
+      <div class="ml-auto flex items-center gap-4 md:gap-10">
+        <!-- DESKTOP MENU -->
+        <div
+          class="space-x-8 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex"
+        >
+          <a href="./index.html" class="hover:text-red-600 transition">Home</a>
+          <a href="./about.html" class="hover:text-red-600 transition">About</a>
+          <a href="./events.html" class="hover:text-red-600 transition"
+            >Events</a
+          >
         </div>
 
-        <!-- RIGHT SIDE (MENU + BUTTON) -->
-        <div class="ml-auto flex items-center gap-10">
+        <!-- CONTACT BUTTON -->
+        <!-- Desktop Contact Button -->
+        <button
+          class="hidden md:block px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+          onclick="
+            document
+              .getElementById('footer')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          Contact Us
+        </button>
 
-            <!-- DESKTOP MENU -->
-            <div class="space-x-8 text-[11px] uppercase tracking-[0.3em] font-light hidden md:flex">
-                <a href="./index.html" class="hover:text-red-600 transition">Home</a>
-                <a href="./about.html" class="hover:text-red-600 transition">About</a>
-                <a href="./events.html" class="hover:text-red-600 transition">Events</a>
-            </div>
-
-            <!-- CONTACT BUTTON -->
-            <!-- Desktop Contact Button -->
-            <button
-                class="hidden md:block px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
-                onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
-                Contact Us
-            </button>
-
-            <!-- HAMBURGER -->
-            <button id="menu-btn" class="md:hidden text-white">
-                <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
-
-        </div>
-
+        <!-- HAMBURGER -->
+        <button id="menu-btn" class="md:hidden text-white">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- MOBILE MENU (Navbar ke niche se open hoga) -->
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed left-0 w-full  backdrop-blur-lg z-[90]
-    top-[80px]
-    flex flex-col items-center gap-6 py-8
-    text-white uppercase tracking-widest
-    transform -translate-y-10 opacity-0 pointer-events-none
-    transition-all duration-300 rounded-b-2xl">
+    <div
+      id="mobile-menu"
+      class="fixed left-0 w-full backdrop-blur-lg z-[90] top-[70px] md:top-[80px] flex flex-col items-center gap-6 py-8 text-white uppercase tracking-widest transform -translate-y-10 opacity-0 pointer-events-none transition-all duration-300 rounded-b-2xl"
+    >
+      <a href="./index.html" class="hover:text-red-600">Home</a>
+      <a href="./about.html" class="hover:text-red-600">About</a>
+      <a href="./events.html" class="hover:text-red-600">Events</a>
 
-        <a href="./index.html" class="hover:text-red-600">Home</a>
-        <a href="./about.html" class="hover:text-red-600">About</a>
-        <a href="./events.html" class="hover:text-red-600">Events</a>
-
-        <button
-            class="md:hidden px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
-            onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });">
-            Contact Us
-        </button>
+      <button
+        class="md:hidden px-6 py-2 bg-white text-black text-sm font-bold uppercase hover:bg-red-600 hover:text-white transition"
+        onclick="
+          document
+            .getElementById('footer')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        Contact Us
+      </button>
     </div>
 
-
     <!-- Events Section -->
-    <section id="events" class="pt-32 pb-24 px-4 min-h-screen bg-spidey-black web-pattern">
-        <div class="max-w-7xl mx-auto">
-            <header class="mb-16 text-center">
-                <h1 class="text-6xl md:text-8xl text-white mb-4">MISSION <span class="text-spidey-red">LOG</span></h1>
-                <p class="text-gray-400 text-xl max-w-2xl mx-auto">
-                    Choose your mission. Every hero has a path, what's yours? Register now to secure your spot in the
-                    multiverse.
-                </p>
-            </header>
+    <section
+      id="events"
+      class="pt-24 md:pt-32 pb-20 md:pb-24 px-4 min-h-screen web-pattern"
+    >
+      <div class="max-w-7xl mx-auto">
+        <header class="mb-16 text-center">
+          <h1 class="text-4xl sm:text-5xl md:text-8xl text-white mb-4">
+            MISSION <span class="text-spidey-red">LOG</span>
+          </h1>
+          <p
+            class="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto"
+          >
+            Choose your mission. Every hero has a path, what's yours? Register
+            now to secure your spot in the multiverse.
+          </p>
+        </header>
 
-            <!-- Filters -->
-            <!-- <div class="flex flex-wrap justify-center gap-4 mb-12" id="categories-container"> -->
-            <!-- Categories will be injected here -->
-            <!-- </div> -->
+        <!-- Filters -->
+        <!-- <div class="flex flex-wrap justify-center gap-4 mb-12" id="categories-container"> -->
+        <!-- Categories will be injected here -->
+        <!-- </div> -->
 
-            <!-- Events Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="events-grid">
-                <!-- Events will be injected here -->
-            </div>
-
-            <div id="no-events" class="hidden text-center py-20">
-                <i data-lucide="search" class="w-16 h-16 text-gray-600 mx-auto mb-4"></i>
-                <p class="text-2xl text-gray-500 font-comic">No missions found in this dimension...</p>
-            </div>
+        <!-- Events Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-10"
+          id="events-grid"
+        >
+          <!-- Events will be injected here -->
         </div>
+
+        <div id="no-events" class="hidden text-center py-20">
+          <i
+            data-lucide="search"
+            class="w-16 h-16 text-gray-600 mx-auto mb-4"
+          ></i>
+          <p class="text-2xl text-gray-500 font-comic">
+            No missions found in this dimension...
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Event Modal -->
-    <div id="event-modal"
-        class="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 pointer-events-none opacity-0">
-        <div id="modal-overlay"
-            class="absolute inset-0 bg-black/90 backdrop-blur-sm cursor-zoom-out opacity-0 transition-opacity duration-500">
+    <div
+      id="event-modal"
+      class="fixed inset-0 z-[100] flex items-center justify-center p-3 md:p-10 pointer-events-none opacity-0"
+    >
+      <div
+        id="modal-overlay"
+        class="absolute inset-0 bg-black/90 backdrop-blur-sm cursor-zoom-out opacity-0 transition-opacity duration-500"
+      ></div>
+      <div
+        id="modal-content"
+        class="relative w-full max-w-6xl bg-spidey-black comic-border border-spidey-red overflow-hidden z-10 flex flex-col lg:flex-row max-h-[92vh] overflow-y-auto opacity-0"
+      >
+        <button
+          id="close-modal"
+          class="absolute top-4 right-4 md:top-6 md:right-6 p-2 bg-spidey-red text-white rounded-full z-20 hover:scale-110 transition-transform"
+        >
+          <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div id="modal-body" class="flex flex-col lg:flex-row w-full">
+          <!-- Modal content will be injected here -->
         </div>
-        <div id="modal-content"
-            class="relative w-full max-w-6xl bg-spidey-black comic-border border-spidey-red overflow-hidden z-10 flex flex-col lg:flex-row max-h-[90vh] overflow-y-auto opacity-0">
-            <button id="close-modal"
-                class="absolute top-6 right-6 p-2 bg-spidey-red text-white rounded-full z-20 hover:scale-110 transition-transform">
-                <i data-lucide="x" class="w-8 h-8"></i>
-            </button>
-            <div id="modal-body" class="flex flex-col lg:flex-row w-full">
-                <!-- Modal content will be injected here -->
-            </div>
-        </div>
+      </div>
     </div>
     <!-- FOOTER -->
-    <footer id="footer" class="text-white py-16 w-full border-t border-white/10">
+    <footer
+      id="footer"
+      class="text-white py-16 w-full border-t border-white/10"
+    >
+      <!-- MAIN GRID: LEFT, MIDDLE, RIGHT -->
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-24 items-start px-6 md:px-12 lg:px-24"
+      >
+        <!-- LEFT: LOGO + SOCIALS -->
+        <div class="w-full flex flex-col items-center text-center">
+          <img src="./assets/logo.PNG" class="w-52 mb-4" />
 
-        <!-- MAIN GRID: LEFT, MIDDLE, RIGHT -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-24 items-start px-6 md:px-12 lg:px-24">
+          <div class="flex gap-4 justify-center">
+            <a href="https://www.facebook.com/modelclubbit/" class="group">
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/facebook.png" class="w-4" />
+              </div>
+            </a>
 
-            <!-- LEFT: LOGO + SOCIALS -->
-            <div class="w-full flex flex-col items-center text-center">
-                <img src="./assets/logo.PNG" class="w-52 mb-4">
+            <a href="https://www.instagram.com/modelclubbit/" class="group">
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/instagram.png" class="w-4" />
+              </div>
+            </a>
 
+            <a
+              href="https://in.linkedin.com/company/modelclub-bitsindri"
+              class="group"
+            >
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/linkedin.png" class="w-4" />
+              </div>
+            </a>
 
+            <a
+              href="https://www.youtube.com/channel/UC6T8EWpW1HBGSLL7_UyjHhw"
+              class="group"
+            >
+              <div
+                class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition"
+              >
+                <img src="./assets/youtube.png" class="w-4" />
+              </div>
+            </a>
+          </div>
+        </div>
 
-                <div class="flex gap-4 justify-center">
-                    <a href="https://www.facebook.com/modelclubbit/" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/facebook.png" class="w-4">
-                        </div>
-                    </a>
+        <!-- MIDDLE: QUICK LINKS -->
+        <div
+          class="w-full flex flex-col items-center text-center justify-center"
+        >
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li>
+              <a
+                href="./index.html"
+                class="hover:text-spidey-red transition-all duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="hover:text-spidey-red transition-all duration-300"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="./events.html"
+                class="hover:text-spidey-red transition-all duration-300"
+                >Events</a
+              >
+            </li>
+          </ul>
+        </div>
 
-                    <a href="https://www.instagram.com/modelclubbit/" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/instagram.png" class="w-4">
-                        </div>
-                    </a>
+        <!-- RIGHT: CONTACT INFO -->
+        <div
+          class="w-full flex flex-col items-center text-center justify-center"
+        >
+          <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
 
-                    <a href="https://in.linkedin.com/company/modelclub-bitsindri" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/linkedin.png" class="w-4">
-                        </div>
-                    </a>
-
-                    <a href="https://www.youtube.com/channel/UC6T8EWpW1HBGSLL7_UyjHhw" class="group">
-                        <div
-                            class="p-3 border border-white/10 rounded-full hover:border-red-600 hover:shadow-[0_0_15px_#ed1d24] transition">
-                            <img src="./assets/youtube.png" class="w-4">
-                        </div>
-                    </a>
-                </div>
+          <div class="space-y-5 text-gray-400 text-sm">
+            <!-- PERSON 1 -->
+            <div
+              class="flex items-center gap-3 justify-center group cursor-pointer"
+            >
+              <a
+                href="tel:+917004199068"
+                class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300"
+              >
+                <img src="./assets/phone.png" class="w-5" />
+                <p>
+                  Harshita Seth <br />
+                  +91 7004199068
+                </p>
+              </a>
             </div>
 
-            <!-- MIDDLE: QUICK LINKS -->
-            <div class="w-full flex flex-col items-center text-center justify-center">
-                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                <ul class="space-y-3 text-gray-400 text-sm">
-                    <li><a href="./index.html" class="hover:text-spidey-red transition-all duration-300">Home</a></li>
-                    <li><a href="./about.html" class="hover:text-spidey-red transition-all duration-300">About</a></li>
-                    <li><a href="./events.html" class="hover:text-spidey-red transition-all duration-300">Events</a>
-                    </li>
-                </ul>
+            <!-- PERSON 2 -->
+            <div
+              class="flex items-center gap-3 justify-center group cursor-pointer"
+            >
+              <a
+                href="tel:+918434845066"
+                class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300"
+              >
+                <img src="./assets/phone.png" class="w-5" />
+                <p>
+                  Radhe Raman Singh <br />
+                  +91 8434845066
+                </p>
+              </a>
             </div>
 
-            <!-- RIGHT: CONTACT INFO -->
-            <div class="w-full flex flex-col items-center text-center justify-center">
-                <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+            <!-- PERSON 3 -->
+            <div
+              class="flex items-center gap-3 justify-center group cursor-pointer"
+            >
+              <a
+                href="tel:+919279336168"
+                class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300"
+              >
+                <img src="./assets/phone.png" class="w-5" />
+                <p>
+                  Prince Kumar <br />
+                  +91 9279336168
+                </p>
+              </a>
+            </div>
 
-                <div class="space-y-5 text-gray-400 text-sm">
-
-                    <!-- PERSON 1 -->
-                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
-                        <a href="tel:+917004199068"
-                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
-                            <img src="./assets/phone.png" class="w-5">
-                            <p>
-                                Harshita Seth <br>
-                                +91 7004199068
-                            </p>
-                        </a>
-                    </div>
-
-                    <!-- PERSON 2 -->
-                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
-                        <a href="tel:+918434845066"
-                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
-                            <img src="./assets/phone.png" class="w-5">
-                            <p>
-                                Radhe Raman Singh <br>
-                                +91 8434845066
-                            </p>
-                        </a>
-                    </div>
-
-                    <!-- PERSON 3 -->
-                    <div class="flex items-center gap-3 justify-center group cursor-pointer">
-                        <a href="tel:+919279336168"
-                            class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
-                            <img src="./assets/phone.png" class="w-5">
-                            <p>
-                                Prince Kumar <br>
-                                +91 9279336168
-                            </p>
-                        </a>
-                    </div>
-
-                    <!-- EMAIL -->
-                    <!-- <div class="flex items-center gap-3 justify-center group cursor-pointer">
+            <!-- EMAIL -->
+            <!-- <div class="flex items-center gap-3 justify-center group cursor-pointer">
                         <a href="mailto:sandhaan@bitsindri.ac.in"
                             class="flex items-center gap-3 hover:text-spidey-red transition-all duration-300">
                             <img src="./assets/mail.png" class="w-5">
                             sandhaan@bitsindri.ac.in
                         </a>
                     </div> -->
-
-
-                </div>
-            </div>
-
+          </div>
         </div>
-        <!-- DEVELOPERS SECTION -->
-        <div class="w-full flex flex-col items-center mt-12 mb-6 px-6">
+      </div>
+      <!-- DEVELOPERS SECTION -->
+      <div class="w-full flex flex-col items-center mt-12 mb-6 px-6">
+        <!-- Designed & Developed -->
+        <p class="text-xs text-gray-400 mb-4">Designed & Developed by</p>
 
-            <!-- Designed & Developed -->
-            <p class="text-xs text-gray-400 mb-4">Designed & Developed by</p>
+        <!-- Developers: flex-row, no wrap -->
+        <div class="flex flex-row gap-6 justify-center flex-nowrap">
+          <!-- DEV 1 -->
+          <div
+            class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer"
+          >
+            <p>Garva Raj</p>
+            <a
+              href="https://www.linkedin.com/in/garva-raj-a82087317/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/linkedin.png" class="w-3" />
+            </a>
+            <a
+              href="https://www.instagram.com/gr.04__/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/instagram.png" class="w-3" />
+            </a>
+          </div>
 
-            <!-- Developers: flex-row, no wrap -->
-            <div class="flex flex-row gap-6 justify-center flex-nowrap">
-
-                <!-- DEV 1 -->
-                <div
-                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
-                    <p>Garva Raj</p>
-                    <a href="https://www.linkedin.com/in/garva-raj-a82087317/" class="flex items-center gap-1">
-                        <img src="./assets/linkedin.png" class="w-3">
-                    </a>
-                    <a href="https://www.instagram.com/gr.04__/" class="flex items-center gap-1">
-                        <img src="./assets/instagram.png" class="w-3">
-                    </a>
-                </div>
-
-                <!-- DEV 2 -->
-                <div
-                    class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer">
-                    <p>Himanshu Kumar</p>
-                    <a href="https://www.linkedin.com/in/himanshu-mishra-432334330/" class="flex items-center gap-1">
-                        <img src="./assets/linkedin.png" class="w-3">
-                    </a>
-                    <a href="https://www.instagram.com/__himanshu.15__/" class="flex items-center gap-1">
-                        <img src="./assets/instagram.png" class="w-3">
-                    </a>
-                </div>
-
-            </div>
-
+          <!-- DEV 2 -->
+          <div
+            class="flex items-center gap-2 text-xs text-gray-400 hover:text-spidey-red transition-all duration-300 cursor-pointer"
+          >
+            <p>Himanshu Kumar</p>
+            <a
+              href="https://www.linkedin.com/in/himanshu-mishra-432334330/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/linkedin.png" class="w-3" />
+            </a>
+            <a
+              href="https://www.instagram.com/__himanshu.15__/"
+              class="flex items-center gap-1"
+            >
+              <img src="./assets/instagram.png" class="w-3" />
+            </a>
+          </div>
         </div>
-
-
+      </div>
     </footer>
     <!-- Scripts -->
     <script src="data.js"></script>
     <script src="11.js"></script>
     <!-- <script src="script.js"></script> -->
-</body>
-
+  </body>
 </html>
