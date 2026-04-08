@@ -4,8 +4,6 @@ const glow = document.getElementById('glow');
 const title = document.getElementById('title');
 const about = document.querySelector('#about');
 const spiderman = document.querySelector('.spiderman-img');
-const aboutHoverImage = document.getElementById('about-hover-image');
-const aboutHoverFallback = document.getElementById('about-hover-fallback');
 const hoverEffectCtor = window.hoverEffect || window.HoverEffect;
 const isTouchDevice =
   window.matchMedia('(pointer: coarse)').matches ||
@@ -17,25 +15,29 @@ let mouseY = 0;
 
 function initAboutHoverEffect() {
   const supportsHoverPointer = !window.matchMedia('(pointer: coarse)').matches;
-  if (
-    !aboutHoverImage ||
-    typeof hoverEffectCtor !== 'function' ||
-    !supportsHoverPointer
-  ) {
+  if (typeof hoverEffectCtor !== 'function' || !supportsHoverPointer) {
     return;
   }
 
-  new hoverEffectCtor({
-    parent: aboutHoverImage,
-    intensity: 0.3,
-    image1: './assets/s1.jpg',
-    image2: './assets/s2.jpg',
-    displacementImage: './assets/s2.jpg',
-  });
+  const hoverTargets = ['.js-about-us-hover', '.js-about-sandhaan-hover'];
 
-  if (aboutHoverFallback) {
-    aboutHoverFallback.style.opacity = '0';
-  }
+  hoverTargets.forEach((selector) => {
+    const hoverTarget = document.querySelector(selector);
+    if (!hoverTarget) return;
+
+    new hoverEffectCtor({
+      parent: hoverTarget,
+      intensity: 0.3,
+      image1: hoverTarget.dataset.image1,
+      image2: hoverTarget.dataset.image2,
+      displacementImage: hoverTarget.dataset.displacementImage,
+    });
+
+    const fallback = hoverTarget.querySelector(`${selector}-fallback`);
+    if (fallback) {
+      fallback.style.opacity = '0';
+    }
+  });
 }
 
 window.addEventListener('load', initAboutHoverEffect);
