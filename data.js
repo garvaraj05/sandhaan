@@ -2,6 +2,7 @@ const EVENTS = [
     {
         id: "1",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -13,6 +14,7 @@ const EVENTS = [
     {
         id: "2",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -24,6 +26,7 @@ const EVENTS = [
     {
         id: "3",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -35,6 +38,7 @@ const EVENTS = [
     {
         id: "4",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -46,6 +50,7 @@ const EVENTS = [
     {
         id: "5",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -57,6 +62,7 @@ const EVENTS = [
     {
         id: "6",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -68,6 +74,7 @@ const EVENTS = [
     {
         id: "7",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -79,6 +86,7 @@ const EVENTS = [
     {
         id: "8",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -90,6 +98,7 @@ const EVENTS = [
     {
         id: "9",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",
@@ -101,6 +110,7 @@ const EVENTS = [
     {
         id: "10",
         title: "Coming Soon",
+        open:"no",
         description: "Something exciting is on the way. Stay tuned!",
         fullDescription: "Something exciting is quietly taking shape behind the scenes. While we’re not ready to reveal all the details just yet, we can promise that it’s going to be worth the wait. This upcoming event is being carefully crafted to bring something fresh, engaging, and memorable. Whether you’re here out of curiosity or anticipation, you won’t want to miss what’s coming next. Stay tuned as we get closer to unveiling everything.",
         date: "Date Revealing Soon",

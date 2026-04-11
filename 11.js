@@ -138,7 +138,7 @@ function renderEventsGrid() {
     container.innerHTML = filtered
       .map(
         (event, idx) => `
-        <button onclick="openModal('${event.id}', event)" class="event-box-card reveal-on-scroll opacity-0" data-animation="animate-scaleIn" aria-label="Open ${event.title}">
+        <button onclick="handleCardClick('${event.id}', event)" class="event-box-card reveal-on-scroll opacity-0" data-animation="animate-scaleIn">
           <img src="./assets/box.png" alt="${event.title}" class="event-box-image">
         </button>
       `,
@@ -149,6 +149,21 @@ function renderEventsGrid() {
     setupScrollReveal();
   }
 }
+
+//data.js me agar event me open ka value yes rahega tab us card pe click karne pe hi popup ayega
+window.handleCardClick = (id, event) => {
+  const eventData = EVENTS.find((e) => e.id === id);
+
+  if (!eventData) return;
+
+  // 👇 check open flag
+  if (eventData.open === "yes") {
+    openModal(id, event);
+  } else {
+    // ❌ DO NOTHING (ya optional effect)
+    console.log("Event not open yet");
+  }
+};
 
 // --- Filtering Logic ---
 
@@ -271,9 +286,9 @@ window.openModal = (id, event) => {
                 </ul>
             </div>
 
-            <button class="w-full py-5 bg-spidey-red text-white font-comic text-3xl comic-border border-white hover:scale-[1.02] transition-all mt-8">
-                REGISTER FOR MISSION
-            </button>
+            <button class="px-6 py-3 bg-spidey-red text-white text-lg uppercase tracking-wider font-[Anton] hover:scale-105 hover:shadow-[0_0_15px_#E23636] transition-all duration-300">
+  Register for Mission
+</button>
         </div>
     `;
 
