@@ -152,7 +152,7 @@ function renderEventsGrid() {
   }
 }
 
-//data.js me agar event me open ka value yes rahega tab us card pe click karne pe hi popup ayega
+//data.js me agar event me open ka value yes rahega tab us card pe click karne pe hi popup ayega...
 window.handleCardClick = (id, event) => {
   const eventData = EVENTS.find((e) => e.id === id);
 
